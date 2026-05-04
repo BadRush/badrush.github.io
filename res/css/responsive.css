@@ -45,42 +45,16 @@
   .timeline-dot { left: -24px; width: 12px; height: 12px; }
   .projects-grid { grid-template-columns: 1fr; }
   .back-to-top { bottom: 20px; right: 20px; }
-  .theme-toggle { bottom: 20px; left: 20px; }
   .section { padding: 48px 16px; }
 }
 
-/* ===== LIGHT MODE ===== */
-[data-theme="light"] {
-  --bg-primary: #f8fafc;
-  --bg-secondary: #e2e8f0;
-  --bg-card: rgba(255, 255, 255, 0.8);
-  --bg-glass: rgba(255, 255, 255, 0.6);
-  --border-glass: rgba(0, 0, 0, 0.08);
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
-  --accent: #0891b2;
-  --accent-glow: rgba(8, 145, 178, 0.2);
-  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.08);
-}
 
-[data-theme="light"] body::before {
-  background:
-    radial-gradient(ellipse 600px 400px at 20% 20%, rgba(6, 182, 212, 0.06), transparent),
-    radial-gradient(ellipse 500px 500px at 80% 80%, rgba(139, 92, 246, 0.04), transparent);
-}
-
-[data-theme="light"] .navbar { background: rgba(248, 250, 252, 0.85); }
-[data-theme="light"] .hero-status { border-color: var(--bg-primary); }
-[data-theme="light"] .timeline-dot { background: var(--bg-primary); }
-[data-theme="light"] .theme-toggle { background: rgba(255, 255, 255, 0.6); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); }
-[data-theme="light"] .theme-toggle:hover { background: rgba(255, 255, 255, 0.9); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); }
 
 /* ===== PRINT ===== */
 @media print {
   body { background: #fff; color: #000; }
   body::before { display: none; }
-  .navbar, .back-to-top, .theme-toggle, .hero-socials, .footer-socials,
+  .navbar, .back-to-top, .hero-socials, .footer-socials,
   .hero-actions, .nav-toggle { display: none !important; }
   .glass-card, .cert-card, .edu-card, .skill-badge, .project-card {
     background: #fff; border: 1px solid #ddd;

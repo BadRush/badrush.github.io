@@ -136,22 +136,30 @@
           <div class="timeline-dot"></div>
           <div class="glass-card">
             <div class="timeline-header">
-              <div class="timeline-role">Network Operation Center (NOC)</div>
+              <div class="timeline-role" style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                Network Operation Center (NOC)
+                <span style="font-size: 0.75rem; padding: 2px 10px; border-radius: 20px; background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(139, 92, 246, 0.15)); color: var(--accent); border: 1px solid var(--border-glass); font-weight: 700; letter-spacing: 0.5px;"><i data-lucide="award" class="icon" style="width:12px; height:12px; display:inline; margin-right:4px; vertical-align:-2px;"></i>MTCINE</span>
+              </div>
               <div class="timeline-company">PT Jembatan Citra Nusantara</div>
               <div class="timeline-period">Jan 2021 — Sekarang</div>
             </div>
             <div class="timeline-body">
               <ul>
-                <li>Mengelola dan mengoperasikan infrastruktur jaringan ISP skala besar dengan 200+ perangkat jaringan (MikroTik, Cisco, Huawei, Juniper)</li>
-                <li>Merancang dan mengimplementasikan topologi jaringan backbone, distribusi, dan akses untuk mendukung infrastruktur yang skalabel dan andal</li>
-                <li>Mengkonfigurasi dan mengelola BGP routing dengan upstream provider, termasuk route filtering, prefix management, dan optimasi routing policy</li>
-                <li>Mengimplementasikan dan memelihara protokol routing internal (OSPF) untuk memastikan kestabilan jaringan</li>
-                <li>Memonitor performa jaringan dan melakukan troubleshooting lanjutan, termasuk root cause analysis untuk meminimalkan downtime</li>
-                <li>Melakukan perencanaan dan manajemen IP address di berbagai segmen jaringan</li>
-                <li>Merancang dan mengelola infrastruktur virtualisasi berbasis Proxmox untuk mendukung layanan monitoring dan operasional internal</li>
-                <li>Mengembangkan aplikasi otomasi "Backuper" untuk backup rutin konfigurasi perangkat jaringan multi-vendor secara terjadwal dan terpusat</li>
-                <li>Mengembangkan aplikasi pengelola logistik internal untuk mendukung efisiensi operasional tim</li>
+                <li>Mengelola infrastruktur ISP backbone & distribusi dengan <strong>200+ node multi-vendor</strong> (MikroTik, Cisco, Huawei, Juniper), menjaga tingkat reliabilitas layanan yang tinggi.</li>
+                <li>Merancang dan memelihara protokol routing dinamis <strong>(BGP & OSPF)</strong>, termasuk optimasi routing policy, manipulasi traffic, dan mitigasi anomali jaringan secara real-time.</li>
+                <li>Membangun dan mengelola klaster virtualisasi <strong>Proxmox VE</strong> untuk menampung seluruh beban kerja sistem monitoring terpusat dan layanan operasional NOC.</li>
+                <li>Menekan waktu <em>downtime</em> dengan melakukan isolasi gangguan tingkat L2/L3 serta <strong>Root Cause Analysis (RCA)</strong> secara proaktif dan terukur.</li>
+                <li>Meningkatkan efisiensi kerja tim NOC secara signifikan dengan memprogram <strong>sistem otomasi & internal tools</strong> (Python, Telegram API), seperti sistem auto-backup dan bot notifikasi cerdas.</li>
+                <li>Bertanggung jawab penuh atas manajemen kapasitas dan hierarki alokasi <strong>IP Address</strong> (publik dan privat) di seluruh topologi jaringan.</li>
               </ul>
+              <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px;">
+                <span class="project-tag">BGP</span>
+                <span class="project-tag">OSPF</span>
+                <span class="project-tag">MikroTik</span>
+                <span class="project-tag">Cisco</span>
+                <span class="project-tag">Proxmox</span>
+                <span class="project-tag">Python Automation</span>
+              </div>
             </div>
           </div>
         </div>
@@ -161,14 +169,27 @@
           <div class="timeline-dot"></div>
           <div class="glass-card">
             <div class="timeline-header">
-              <div class="timeline-role">Wireless Technical Support Operation</div>
+              <div class="timeline-role">Wireless Technical Support Officer</div>
               <div class="timeline-company">PT Jembatan Citra Nusantara</div>
               <div class="timeline-period">Jul 2020 — Jan 2021</div>
             </div>
             <div class="timeline-body">
               <ul>
-                <li>Installasi dan perawatan jaringan LAN dan WLAN</li>
+                <li>Melakukan instalasi, konfigurasi, dan pemeliharaan perangkat <strong>Wireless Access Point</strong> serta jaringan <strong>FTTH (Fiber To The Home)</strong> di lapangan untuk pelanggan korporat dan retail.</li>
+                <li>Melaksanakan pekerjaan fisik infrastruktur telekomunikasi, termasuk pemanjatan dan instalasi perangkat radio pada <strong>Tower BTS</strong> sesuai standar keselamatan operasional.</li>
+                <li>Melakukan perakitan dan instalasi <strong>Rack Server/Shelter BTS</strong> secara end-to-end, meliputi pembacaan diagram, manajemen kelistrikan (power system), dan integrasi perangkat jaringan.</li>
+                <li>Bertindak sebagai <strong>Technical Support & Helpdesk</strong>, menangani keluhan pelanggan, mendiagnosis masalah konektivitas, dan memberikan solusi teknis secara responsif.</li>
+                <li>Melakukan perawatan preventif dan perbaikan (troubleshooting) jaringan <strong>LAN dan WLAN</strong> guna memastikan kualitas layanan (SLA) tetap terjaga.</li>
               </ul>
+              <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px;">
+                <span class="project-tag">FTTH</span>
+                <span class="project-tag">Wireless AP</span>
+                <span class="project-tag">Tower BTS</span>
+                <span class="project-tag">Site Integration</span>
+                <span class="project-tag">Helpdesk</span>
+                <span class="project-tag">Tech Support</span>
+                <span class="project-tag">LAN / WLAN</span>
+              </div>
             </div>
           </div>
         </div>
@@ -254,6 +275,48 @@
             <span class="project-tag">Proxmox</span>
             <span class="project-tag">Docker</span>
             <span class="project-tag">Monitoring</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-4">
+          <div class="project-header">
+            <div class="project-icon"><i data-lucide="bell-ring" class="icon"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/BadRush" target="_blank" title="GitHub"><i data-lucide="github" class="icon"></i></a>
+            </div>
+          </div>
+          <div class="project-name">Smoke Notifier</div>
+          <p class="project-desc">Sistem notifikasi cerdas terintegrasi Telegram untuk memfilter dan mengirimkan alert status jaringan yang relevan, meminimalkan notifikasi spam.</p>
+          <div class="project-tags">
+            <span class="project-tag">Telegram API</span>
+            <span class="project-tag">Alerting</span>
+            <span class="project-tag">Python</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-5">
+          <div class="project-header">
+            <div class="project-icon"><i data-lucide="server" class="icon"></i></div>
+          </div>
+          <div class="project-name">Internal Data Center</div>
+          <p class="project-desc">Perancangan dan setup infrastruktur Data Center internal. Meliputi instalasi server bare-metal, klaster Proxmox VE, deployment VPS, dan manajemen resource.</p>
+          <div class="project-tags">
+            <span class="project-tag">Data Center</span>
+            <span class="project-tag">Proxmox</span>
+            <span class="project-tag">Virtualization</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-6">
+          <div class="project-header">
+            <div class="project-icon"><i data-lucide="globe" class="icon"></i></div>
+          </div>
+          <div class="project-name">CDN Speedtest & Globalping</div>
+          <p class="project-desc">Implementasi dan optimasi node server Speedtest serta integrasi jaringan Globalping untuk pengukuran latensi dan performa routing secara terdistribusi.</p>
+          <div class="project-tags">
+            <span class="project-tag">Speedtest Node</span>
+            <span class="project-tag">Globalping</span>
+            <span class="project-tag">Performance</span>
           </div>
         </div>
       </div>
@@ -363,9 +426,6 @@
   </div><!-- /.page-wrapper -->
 
   <!-- Floating Controls -->
-  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle tema">
-    <i data-lucide="sun" class="icon"></i>
-  </button>
   <button class="back-to-top" id="back-to-top" aria-label="Kembali ke atas">
     <i data-lucide="chevron-up" class="icon"></i>
   </button>

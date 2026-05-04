@@ -63,36 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
-  // ===== THEME TOGGLE =====
-  const themeBtn = document.getElementById('theme-toggle');
-  const html = document.documentElement;
-  const saved = localStorage.getItem('theme');
 
-  if (saved) {
-    html.setAttribute('data-theme', saved);
-  }
-
-  function updateThemeIcon() {
-    const isDark = html.getAttribute('data-theme') !== 'light';
-    if (themeBtn) {
-      themeBtn.innerHTML = isDark
-        ? '<i data-lucide="sun" class="icon"></i>'
-        : '<i data-lucide="moon" class="icon"></i>';
-      if (typeof lucide !== 'undefined') lucide.createIcons();
-    }
-  }
-
-  if (themeBtn) {
-    themeBtn.addEventListener('click', () => {
-      const current = html.getAttribute('data-theme');
-      const next = current === 'light' ? 'dark' : 'light';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      updateThemeIcon();
-    });
-  }
-
-  updateThemeIcon();
 
   // ===== BACK TO TOP =====
   const backBtn = document.getElementById('back-to-top');
