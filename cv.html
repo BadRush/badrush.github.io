@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>CV - Anam Badrus Salam</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #334155;
+      --accent: #0891b2;
+      --light-bg: #f8fafc;
+      --border: #e2e8f0;
+      --font-sans: 'Inter', sans-serif;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: var(--font-sans);
+      color: var(--secondary);
+      line-height: 1.5;
+      background: #e2e8f0;
+      font-size: 11pt;
+    }
+    
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 20mm;
+      margin: 10mm auto;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; padding: 15mm; box-shadow: none; width: 100%; min-height: auto; }
+      .no-print { display: none; }
+    }
+    
+    /* Header */
+    .header { border-bottom: 2px solid var(--primary); padding-bottom: 12px; margin-bottom: 16px; }
+    .name { font-size: 24pt; font-weight: 800; color: var(--primary); margin-bottom: 4px; letter-spacing: -0.5px; }
+    .role { font-size: 14pt; font-weight: 600; color: var(--accent); margin-bottom: 8px; }
+    .contacts { font-size: 9pt; display: flex; gap: 16px; color: var(--secondary); flex-wrap: wrap; }
+    .contacts span { display: inline-flex; align-items: center; gap: 4px; }
+    .contacts a { color: var(--secondary); text-decoration: none; }
+    
+    /* Sections */
+    .section { margin-bottom: 16px; }
+    .section-title { font-size: 12pt; font-weight: 700; color: var(--primary); border-bottom: 1px solid var(--border); padding-bottom: 4px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+    
+    /* Summary */
+    .summary { text-align: justify; font-size: 10pt; }
+    
+    /* Experience */
+    .exp-item { margin-bottom: 12px; }
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+    .exp-title { font-weight: 700; color: var(--primary); font-size: 11pt; }
+    .exp-company { font-weight: 600; color: var(--accent); font-size: 10pt; }
+    .exp-date { font-size: 9pt; font-family: 'Fira Code', monospace; color: #64748b; }
+    .exp-body { font-size: 10pt; margin-left: 14px; }
+    .exp-body li { margin-bottom: 4px; text-align: justify; }
+    
+    /* Tech tags */
+    .tech-tags { font-size: 8pt; color: #64748b; margin-top: 4px; font-family: 'Fira Code', monospace; }
+    
+    /* Grid Layouts for smaller sections */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    
+    /* Certifications & Education & Projects */
+    .item-card { margin-bottom: 8px; }
+    .item-title { font-weight: 700; color: var(--primary); font-size: 10pt; }
+    .item-desc { font-size: 9.5pt; }
+    .item-meta { font-size: 8.5pt; color: #64748b; }
+    
+    /* Skills */
+    .skills-list { font-size: 10pt; line-height: 1.6; }
+    
+    .print-btn {
+      position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: var(--accent); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-family: var(--font-sans); font-weight: 600; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .print-btn:hover { background: #06b6d4; }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn no-print" onclick="window.print()">Simpan sebagai PDF</button>
+
+  <div class="page">
+    
+    <!-- HEADER -->
+    <div class="header">
+      <div class="name">Anam Badrus Salam</div>
+      <div class="role">Network Engineer · NOC</div>
+      <div class="contacts">
+        <span>📍 Kab. Banyumas, Jawa Tengah</span>
+        <span>🔗 <a href="https://badrush.github.io">badrush.github.io</a></span>
+        <span>💼 <a href="https://linkedin.com/in/anambadrus">linkedin.com/in/anambadrus</a></span>
+        <span>💻 <a href="https://github.com/BadRush">github.com/BadRush</a></span>
+        <span>✉️ t.me/anamBadrus</span>
+      </div>
+    </div>
+
+    <!-- TENTANG -->
+    <div class="section">
+      <div class="section-title">Tentang Saya</div>
+      <div class="summary">
+        Network Engineer dengan pengalaman lebih dari 5 tahun dalam mengelola, merancang, dan mengoptimalkan infrastruktur jaringan berskala besar untuk Internet Service Provider (ISP). Memiliki keahlian mendalam pada perangkat multi-vendor (MikroTik, Cisco, Huawei, Juniper) serta virtualisasi (Proxmox). Bersertifikasi tingkat ahli (MTCINE) dan terus berinovasi melalui otomasi jaringan (Python) untuk meningkatkan efisiensi operasional.
+      </div>
+    </div>
+
+    <!-- PENGALAMAN KERJA -->
+    <div class="section">
+      <div class="section-title">Pengalaman Kerja</div>
+      
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-title">Network Operation Center (NOC)</span>
+            <span style="font-size: 8pt; background: #e0f2fe; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-weight: 700; margin-left: 6px;">MTCINE Certified</span>
+          </div>
+          <div class="exp-date">Jan 2021 — Sekarang</div>
+        </div>
+        <div class="exp-company">PT Jembatan Citra Nusantara</div>
+        <ul class="exp-body">
+          <li>Mengelola infrastruktur ISP backbone & distribusi dengan <strong>200+ node multi-vendor</strong> (MikroTik, Cisco, Huawei, Juniper), menjaga tingkat reliabilitas layanan yang tinggi.</li>
+          <li>Merancang dan memelihara protokol routing dinamis <strong>(BGP & OSPF)</strong>, termasuk optimasi routing policy, manipulasi traffic, dan mitigasi anomali jaringan secara real-time.</li>
+          <li>Membangun dan mengelola klaster virtualisasi <strong>Proxmox VE</strong> untuk menampung seluruh beban kerja sistem monitoring terpusat dan layanan operasional NOC.</li>
+          <li>Menekan waktu <em>downtime</em> dengan melakukan isolasi gangguan tingkat L2/L3 serta <strong>Root Cause Analysis (RCA)</strong> secara proaktif dan terukur.</li>
+          <li>Memanfaatkan <strong>Prompt Engineering & AI-Assisted Development</strong> untuk merancang arsitektur dan mendeploy <strong>internal tools otomasi</strong> (Python, Web App), memangkas waktu <em>development</em> secara signifikan.</li>
+          <li>Bertanggung jawab penuh atas manajemen kapasitas dan hierarki alokasi <strong>IP Address</strong> (publik dan privat) di seluruh topologi jaringan.</li>
+        </ul>
+        <div class="tech-tags">Tech Stack: BGP, OSPF, MikroTik, Cisco, Proxmox, Python Automation, AI-Assisted Dev</div>
+      </div>
+
+      <div class="exp-item" style="margin-top: 12px;">
+        <div class="exp-header">
+          <div class="exp-title">Wireless Technical Support Operation</div>
+          <div class="exp-date">Jul 2020 — Jan 2021</div>
+        </div>
+        <div class="exp-company">PT Jembatan Citra Nusantara</div>
+        <ul class="exp-body">
+          <li>Melakukan instalasi, konfigurasi, dan pemeliharaan perangkat <strong>Wireless Access Point</strong> serta jaringan <strong>FTTH (Fiber To The Home)</strong> di lapangan untuk pelanggan korporat dan retail.</li>
+          <li>Melaksanakan pekerjaan fisik infrastruktur telekomunikasi, termasuk pemanjatan dan instalasi perangkat radio pada <strong>Tower BTS</strong> sesuai standar keselamatan operasional.</li>
+          <li>Melakukan perakitan dan instalasi <strong>Rack Server/Shelter BTS</strong> secara end-to-end, meliputi pembacaan diagram, manajemen kelistrikan (power system), dan integrasi perangkat jaringan.</li>
+          <li>Bertindak sebagai <strong>Technical Support & Helpdesk</strong>, menangani keluhan pelanggan, mendiagnosis masalah konektivitas, dan memberikan solusi teknis secara responsif.</li>
+          <li>Melakukan perawatan preventif dan perbaikan (troubleshooting) jaringan <strong>LAN dan WLAN</strong> guna memastikan kualitas layanan (SLA) tetap terjaga.</li>
+        </ul>
+        <div class="tech-tags">Tech Stack: FTTH, Wireless AP, Tower BTS, Site Integration, Helpdesk, LAN/WLAN</div>
+      </div>
+    </div>
+
+    <!-- PROYEK INTI -->
+    <div class="section">
+      <div class="section-title">Proyek & Infrastruktur</div>
+      <div class="grid-2">
+        <div class="item-card">
+          <div class="item-title">Internal Data Center</div>
+          <div class="item-desc">Perancangan dan setup infrastruktur Data Center internal. Meliputi instalasi server bare-metal, klaster Proxmox VE, deployment VPS, dan manajemen resource.</div>
+        </div>
+        <div class="item-card">
+          <div class="item-title">CDN Speedtest & Globalping</div>
+          <div class="item-desc">Implementasi dan optimasi node server Speedtest serta integrasi jaringan Globalping untuk pengukuran latensi dan performa routing secara terdistribusi.</div>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Smoke Notifier (Telegram Alerting)</div>
+          <div class="item-desc">Sistem notifikasi cerdas berbasis Python untuk memfilter dan mengirimkan alert status jaringan yang relevan ke Telegram tim NOC.</div>
+        </div>
+        <div class="item-card">
+          <div class="item-title">NOC Monitoring Stack</div>
+          <div class="item-desc">Infrastruktur monitoring berbasis Proxmox untuk pemantauan performa jaringan real-time menggunakan Smokeping dan tools alerting.</div>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Network Backuper</div>
+          <div class="item-desc">Aplikasi otomasi (Python & SSH) untuk backup rutin konfigurasi perangkat jaringan multi-vendor secara terjadwal dan terpusat.</div>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Logistik App</div>
+          <div class="item-desc">Aplikasi web internal pengelola logistik untuk manajemen aset dan inventaris perangkat jaringan operasional NOC.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <!-- SERTIFIKASI -->
+      <div class="section">
+        <div class="section-title">Sertifikasi Profesional</div>
+        <div class="item-card">
+          <div class="item-title">MTCINE (MikroTik Certified Inter-networking Engineer)</div>
+          <div class="item-meta">MikroTik | Dec 2024 — Dec 2027</div>
+        </div>
+        <div class="item-card">
+          <div class="item-title">MTCTCE (MikroTik Certified Traffic Control Engineer)</div>
+          <div class="item-meta">MikroTik | Nov 2022 — Nov 2025</div>
+        </div>
+        <div class="item-card">
+          <div class="item-title">MTCRE (MikroTik Certified Routing Engineer)</div>
+          <div class="item-meta">MikroTik | Sep 2019 — Mar 2023</div>
+        </div>
+        <div class="item-card">
+          <div class="item-title">MTCNA (MikroTik Certified Network Associate)</div>
+          <div class="item-meta">MikroTik | Sep 2019 — Mar 2023</div>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Training Juniper Networks</div>
+          <div class="item-meta">APJII DIY | Jul 2025</div>
+        </div>
+      </div>
+
+      <div>
+        <!-- PENDIDIKAN & PENGHARGAAN -->
+        <div class="section">
+          <div class="section-title">Pendidikan</div>
+          <div class="item-card">
+            <div class="item-title">Universitas Terbuka Indonesia</div>
+            <div class="item-desc">Sistem dan Teknologi Informasi</div>
+            <div class="item-meta">Jul 2022 — Sekarang</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Penghargaan</div>
+          <div class="item-card">
+            <div class="item-title">Peringkat V — LKS IT Network System Administration</div>
+            <div class="item-desc">Lomba kompetensi IT Network tingkat Provinsi Jawa Tengah.</div>
+            <div class="item-meta">Dinas Pendidikan Provinsi Jawa Tengah | 2019</div>
+          </div>
+        </div>
+
+        <!-- KEAHLIAN TEKNIS -->
+        <div class="section">
+          <div class="section-title">Keahlian Teknis & Vendor</div>
+          <div class="skills-list">
+            <strong>Vendor:</strong> MikroTik, Cisco, Huawei, Juniper, Aruba, UniFi, Cambium, Ruijie, Proxmox.<br>
+            <strong>NMS & Observability:</strong> Zabbix, LibreNMS, Grafana, InfluxDB, Cacti, Smokeping.<br>
+            <strong>Keahlian:</strong> Network Architecture, BGP & OSPF Routing, Virtualization, Automation (Python), Prompt Engineering, Troubleshooting, Site Integration, Wireless & FTTH.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

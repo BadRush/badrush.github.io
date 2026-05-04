@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume - Anam Badrus Salam</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #334155;
+      --accent: #0891b2;
+      --font-sans: 'Inter', sans-serif;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: var(--font-sans);
+      color: var(--secondary);
+      line-height: 1.4;
+      background: #e2e8f0;
+      font-size: 10.5pt;
+    }
+    
+    /* Strict 1-Page Layout */
+    .page {
+      width: 210mm;
+      height: 297mm; /* Fixed height for 1 page */
+      padding: 15mm 20mm;
+      margin: 10mm auto;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden; /* Prevent spill over */
+      display: flex;
+      flex-direction: column;
+    }
+    
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; padding: 15mm; box-shadow: none; width: 100%; height: 100%; }
+      .no-print { display: none; }
+    }
+    
+    /* Header */
+    .header { border-bottom: 2px solid var(--primary); padding-bottom: 8px; margin-bottom: 12px; }
+    .name { font-size: 22pt; font-weight: 800; color: var(--primary); margin-bottom: 2px; letter-spacing: -0.5px; }
+    .role { font-size: 13pt; font-weight: 600; color: var(--accent); margin-bottom: 6px; }
+    .contacts { font-size: 8.5pt; display: flex; gap: 14px; color: var(--secondary); flex-wrap: wrap; }
+    .contacts a { color: var(--secondary); text-decoration: none; }
+    
+    /* Sections */
+    .section { margin-bottom: 12px; }
+    .section-title { font-size: 11pt; font-weight: 700; color: var(--primary); border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+    
+    /* Summary */
+    .summary { text-align: justify; font-size: 9.5pt; }
+    
+    /* Experience */
+    .exp-item { margin-bottom: 10px; }
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+    .exp-title { font-weight: 700; color: var(--primary); font-size: 10.5pt; }
+    .exp-company { font-weight: 600; color: var(--accent); font-size: 9.5pt; }
+    .exp-date { font-size: 8.5pt; font-family: 'Fira Code', monospace; color: #64748b; }
+    .exp-body { font-size: 9.5pt; margin-left: 14px; margin-top: 4px; }
+    .exp-body li { margin-bottom: 3px; text-align: justify; }
+    
+    /* Projects Grid */
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .proj-item { margin-bottom: 4px; }
+    .proj-title { font-weight: 700; color: var(--primary); font-size: 9.5pt; }
+    .proj-desc { font-size: 9pt; line-height: 1.3; }
+    
+    /* Two Column Layout for bottom */
+    .bottom-cols { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; flex-grow: 1; }
+    
+    /* Skills & Certs */
+    .skills-text { font-size: 9pt; line-height: 1.5; }
+    .cert-list { font-size: 9pt; line-height: 1.4; }
+    .cert-list strong { color: var(--primary); }
+    
+    .print-btn {
+      position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: var(--accent); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-family: var(--font-sans); font-weight: 600; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn no-print" onclick="window.print()">Print Resume 1 Lembar</button>
+
+  <div class="page">
+    
+    <!-- HEADER -->
+    <div class="header">
+      <div class="name">Anam Badrus Salam</div>
+      <div class="role">Network Engineer · NOC</div>
+      <div class="contacts">
+        <span>📍 Kab. Banyumas, Jawa Tengah</span>
+        <span>💼 linkedin.com/in/anambadrus</span>
+        <span>💻 github.com/BadRush</span>
+        <span>✉️ t.me/anamBadrus</span>
+      </div>
+    </div>
+
+    <!-- TENTANG -->
+    <div class="section">
+      <div class="section-title">Profil Profesional</div>
+      <div class="summary">
+        Network Engineer tersertifikasi MTCINE dengan pengalaman 5+ tahun mengelola infrastruktur ISP skala besar. Berpengalaman merancang topologi backbone, mengoptimasi BGP/OSPF, dan membangun arsitektur Data Center (Proxmox). Memiliki spesialisasi dalam meningkatkan efisiensi operasional NOC melalui Network Automation (Python & API).
+      </div>
+    </div>
+
+    <!-- PENGALAMAN KERJA -->
+    <div class="section">
+      <div class="section-title">Pengalaman Kerja</div>
+      
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-title">Network Operation Center (NOC)</span>
+            <span style="font-size: 7.5pt; background: #e0f2fe; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-weight: 700; margin-left: 6px; vertical-align: middle;">MTCINE Certified</span>
+          </div>
+          <div class="exp-date">Jan 2021 — Sekarang</div>
+        </div>
+        <div class="exp-company">PT Jembatan Citra Nusantara</div>
+        <ul class="exp-body">
+          <li>Mengelola infrastruktur ISP backbone & distribusi dengan <strong>200+ node multi-vendor</strong> (MikroTik, Cisco, Huawei, Juniper), menjaga reliabilitas layanan 99.9%.</li>
+          <li>Merancang dan memelihara protokol routing dinamis <strong>(BGP & OSPF)</strong>, mencakup optimasi routing policy dan mitigasi anomali traffic secara real-time.</li>
+          <li>Membangun klaster virtualisasi <strong>Proxmox VE</strong> untuk menampung beban kerja sistem monitoring terpusat dan layanan Data Center internal NOC.</li>
+          <li>Menekan waktu <em>downtime</em> melalui isolasi gangguan L2/L3 serta <strong>Root Cause Analysis (RCA)</strong> yang proaktif dan sistematis.</li>
+          <li>Memanfaatkan <strong>Prompt Engineering & AI-Assisted Dev</strong> untuk memprogram <strong>internal tools otomasi</strong> (Python, API), memangkas waktu development drastis.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Wireless Technical Support Operation</div>
+          <div class="exp-date">Jul 2020 — Jan 2021</div>
+        </div>
+        <div class="exp-company">PT Jembatan Citra Nusantara</div>
+        <ul class="exp-body">
+          <li>Melakukan perakitan <strong>Rack Server/Shelter BTS</strong> secara end-to-end (diagram, kelistrikan, perangkat jaringan).</li>
+          <li>Menginstalasi dan merawat perangkat <strong>Wireless Access Point</strong> serta jaringan <strong>FTTH</strong> di lapangan.</li>
+          <li>Bertindak sebagai <strong>Helpdesk Tier-1</strong> untuk mendiagnosis masalah konektivitas pelanggan.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PROYEK HIGHLIGHT -->
+    <div class="section">
+      <div class="section-title">Pencapaian & Proyek Kunci</div>
+      <div class="projects-grid">
+        <div class="proj-item">
+          <div class="proj-title">Internal Data Center & Virtualization</div>
+          <div class="proj-desc">Membangun klaster Proxmox VE bare-metal untuk deployment VPS, isolasi resource jaringan, dan hosting layanan monitoring NOC terpusat.</div>
+        </div>
+        <div class="proj-item">
+          <div class="proj-title">Network Backuper & Smoke Notifier</div>
+          <div class="proj-desc">Mendevelop skrip Python terintegrasi Telegram API untuk otomasi backup konfigurasi multi-vendor harian dan filtering alert jaringan anti-spam.</div>
+        </div>
+        <div class="proj-item">
+          <div class="proj-title">CDN Speedtest & Globalping Integration</div>
+          <div class="proj-desc">Mengimplementasikan node server Speedtest dan Globalping terdistribusi guna pengukuran latensi dan performa routing yang presisi.</div>
+        </div>
+        <div class="proj-item">
+          <div class="proj-title">Logistik App</div>
+          <div class="proj-desc">Aplikasi internal untuk efisiensi manajemen aset, inventaris perangkat jaringan, dan logistik operasional tim NOC.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM COLS -->
+    <div class="bottom-cols">
+      <!-- SKILLS -->
+      <div class="section">
+        <div class="section-title">Keahlian Teknis</div>
+        <div class="skills-text">
+          <strong>Network Routing & Switching:</strong> BGP, OSPF, VLAN, STP, Traffic Engineering.<br>
+          <strong>Vendor Ekosistem:</strong> MikroTik, Cisco, Huawei, Juniper, Aruba, UniFi, Cambium.<br>
+          <strong>Sistem & Virtualisasi:</strong> Proxmox VE, Linux Server Administration, Data Center Setup.<br>
+          <strong>NMS & Observability:</strong> Zabbix, LibreNMS, Grafana, InfluxDB, Cacti, Smokeping.<br>
+          <strong>Automation & AI:</strong> Python, Telegram API, Prompt Engineering, AI-Assisted Development.<br>
+          <strong>Infrastruktur Fisik:</strong> Tower BTS, Rack/Shelter Integration, FTTH, Wireless LAN/WAN.
+        </div>
+      </div>
+
+      <!-- CERTS & EDU -->
+      <div class="section">
+        <div class="section-title">Sertifikasi & Edukasi</div>
+        <div class="cert-list">
+          <strong>MTCINE</strong> (Inter-Networking Engineer)<br>
+          <strong>MTCTCE</strong> (Traffic Control)<br>
+          <strong>MTCRE</strong> (Routing Engineer)<br>
+          <strong>MTCNA</strong> (Associate)<br>
+          <em>Sistem & Teknologi Informasi</em><br>
+          Universitas Terbuka (Sedang Berjalan)
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
