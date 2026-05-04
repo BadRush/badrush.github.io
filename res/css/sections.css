@@ -117,13 +117,11 @@
   align-items: center;
 }
 /* Hide the attribution link text only - keep injected content visible */
-.footer-counter-value > a {
-  overflow: hidden;
-  text-indent: -9999px;
-  display: inline;
-  white-space: nowrap;
-  width: 0;
-  height: 0;
+.footer-counter-value a {
+  font-size: 0 !important;
+  color: transparent !important;
+  text-decoration: none !important;
+  line-height: 0 !important;
 }
 /* Force ALL script-injected elements to be visible */
 .footer-counter-value img,
@@ -138,10 +136,6 @@
   line-height: normal !important;
   vertical-align: middle;
   max-height: 22px;
-  text-indent: 0 !important;
-  overflow: visible !important;
-  width: auto !important;
-  height: auto !important;
 }
 
 
