@@ -82,56 +82,62 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 16px;
   background: var(--bg-glass);
   border: 1px solid var(--border-glass);
-  padding: 10px 20px;
-  border-radius: var(--radius-md);
-  margin: 20px 0;
+  padding: 12px 24px;
+  border-radius: var(--radius-lg);
+  margin: 30px 0;
   transition: all var(--transition);
-  backdrop-filter: blur(8px);
-  min-height: 48px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 .footer-counter:hover {
   border-color: var(--accent);
-  box-shadow: 0 0 15px var(--accent-glow);
+  box-shadow: 0 0 20px var(--accent-glow);
   transform: translateY(-2px);
 }
 .footer-counter-label {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   white-space: nowrap;
 }
 .footer-counter-label .icon {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   color: var(--accent);
 }
-/* Hide the attribution link text */
+/* Hide attribution but keep script working */
 .footer-counter a {
   font-size: 0 !important;
   color: transparent !important;
   text-decoration: none !important;
   line-height: 0 !important;
+  display: inline-block;
 }
-/* Ensure the counter digits are visible */
-.footer-counter a img,
-.footer-counter a span,
+/* Style injected elements (images, spans, tables) */
 .footer-counter img,
-.footer-counter span:not(.footer-counter-label span) {
+.footer-counter span:not(.footer-counter-label span),
+.footer-counter table,
+.footer-counter a * {
   font-size: 0.9rem !important;
   color: var(--text-primary) !important;
   line-height: normal !important;
   display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  vertical-align: middle !important;
+  filter: none !important;
 }
+.footer-counter table {
+  border-spacing: 0 !important;
+  border-collapse: collapse !important;
+}
+
 
 
 
