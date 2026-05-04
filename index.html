@@ -1,41 +1,409 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./res/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css
-      ">
-    <title>anamBadrus - tech enthusiast</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anam Badrus Salam — Network Engineer berpengalaman 5+ tahun dalam infrastruktur jaringan ISP skala besar. MikroTik, Cisco, Huawei, Juniper.">
+  <meta name="author" content="Anam Badrus Salam">
+  <meta property="og:title" content="Anam Badrus Salam — Network Engineer">
+  <meta property="og:description" content="Network Engineer berpengalaman 5+ tahun dalam infrastruktur jaringan ISP. MikroTik, Cisco, Huawei, Juniper.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./res/images/pp.jpg">
+  <title>Anam Badrus Salam — Network Engineer</title>
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230a0e17'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,sans-serif' font-weight='800' font-size='28' fill='%2306b6d4'>AB</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./res/style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- pp -->
-        <div class="profile">
-            <img src="/res/images/pp.jpg" alt="foto profil">
-            <p>anam Badrus - Tech Enthusiast</p>
-        </div>
 
-        <!-- sosmed btn -->
-        <div class="baten">
-            <a href="https://github.com/BadRush" target="_blank" rel="noopener noreferrer">Github</a>
-            <a href="https://www.linkedin.com/in/anam-badrus-salam-33a60814a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="http://instagram.com/__badrus" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="http://t.me/anamBadrus" target="_blank" rel="noopener noreferrer">Telegram</a>
-            
-        </div>
-
-        <!-- footer -->
-        <footer>
-            <i>anamBadrus @2023</i>
-        </footer>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="nav-logo">anam<span>Badrus</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="#tentang">Tentang</a>
+        <a href="#pengalaman">Pengalaman</a>
+        <a href="#keahlian">Keahlian</a>
+        <a href="#sertifikat">Sertifikat</a>
+        <a href="#proyek">Proyek</a>
+        <a href="#pendidikan">Pendidikan</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:4px;">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle tema">
+          <i data-lucide="sun" class="icon"></i>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js
-    "></script>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- ===== HERO ===== -->
+    <header class="hero section" id="hero">
+      <div class="hero-content">
+        <div class="hero-avatar-wrapper">
+          <img src="./res/images/pp.jpg" alt="Foto profil Anam Badrus Salam" class="hero-avatar" id="hero-avatar">
+          <div class="hero-status" title="Tersedia untuk peluang baru"></div>
+        </div>
+
+        <h1 class="hero-name">Anam Badrus Salam</h1>
+        <p class="hero-title">Network Engineer · NOC</p>
+        <p class="hero-location">
+          <i data-lucide="map-pin" class="icon"></i>
+          Kab. Banyumas, Jawa Tengah
+        </p>
+
+        <div class="hero-actions">
+          <a href="./res/docs/Anam Badrus Salam - Network Operation Center (NOC).pdf" download class="btn btn-primary" id="btn-download-cv">
+            <i data-lucide="download" class="icon"></i>
+            Download CV
+          </a>
+          <a href="mailto:anamb4drus@gmail.com" class="btn btn-outline" id="btn-contact">
+            <i data-lucide="mail" class="icon"></i>
+            Hubungi Saya
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/BadRush" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub" id="social-github">
+            <i data-lucide="github" class="icon"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/anam-badrus-salam-33a60814a/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" id="social-linkedin">
+            <i data-lucide="linkedin" class="icon"></i>
+          </a>
+          <a href="http://instagram.com/__badrus" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram" id="social-instagram">
+            <i data-lucide="instagram" class="icon"></i>
+          </a>
+          <a href="http://t.me/anamBadrus" target="_blank" rel="noopener noreferrer" class="social-link" title="Telegram" id="social-telegram">
+            <i data-lucide="send" class="icon"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== TENTANG SAYA ===== -->
+    <section class="section" id="tentang">
+      <h2 class="section-title reveal">
+        <i data-lucide="user" class="icon"></i>
+        Tentang Saya
+      </h2>
+
+      <div class="glass-card reveal">
+        <p class="about-content">
+          Network Engineer dengan pengalaman <strong>5+ tahun</strong> dalam merancang, mengoperasikan, dan memelihara infrastruktur jaringan skala menengah hingga besar di lingkungan ISP. Berpengalaman dalam mengelola <strong>200+ perangkat jaringan</strong> multi-vendor meliputi MikroTik, Cisco, Huawei, dan Juniper.
+        </p>
+        <p class="about-content">
+          Memiliki keahlian kuat di bidang routing (BGP, OSPF), manajemen IP address, network monitoring, serta troubleshooting jaringan tingkat lanjut. Berpengalaman dalam virtualisasi infrastruktur menggunakan Proxmox untuk mendukung layanan monitoring dan operasional internal.
+        </p>
+        <p class="about-content">
+          Selain operasional jaringan, juga aktif mengembangkan solusi berbasis software seperti aplikasi otomasi backup konfigurasi perangkat jaringan multi-vendor dan aplikasi pengelola logistik internal untuk meningkatkan efisiensi operasional.
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-value">5+</div>
+            <div class="stat-label">Tahun Pengalaman</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">200+</div>
+            <div class="stat-label">Perangkat Jaringan</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">10+</div>
+            <div class="stat-label">Vendor Jaringan</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PENGALAMAN ===== -->
+    <section class="section" id="pengalaman">
+      <h2 class="section-title reveal">
+        <i data-lucide="briefcase" class="icon"></i>
+        Pengalaman Kerja
+      </h2>
+
+      <div class="timeline">
+        <!-- NOC -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="glass-card">
+            <div class="timeline-header">
+              <div class="timeline-role">Network Operation Center (NOC)</div>
+              <div class="timeline-company">PT Jembatan Citra Nusantara</div>
+              <div class="timeline-period">Jan 2021 — Sekarang</div>
+            </div>
+            <div class="timeline-body">
+              <ul>
+                <li>Mengelola dan mengoperasikan infrastruktur jaringan ISP skala besar dengan 200+ perangkat jaringan (MikroTik, Cisco, Huawei, Juniper)</li>
+                <li>Merancang dan mengimplementasikan topologi jaringan backbone, distribusi, dan akses untuk mendukung infrastruktur yang skalabel dan andal</li>
+                <li>Mengkonfigurasi dan mengelola BGP routing dengan upstream provider, termasuk route filtering, prefix management, dan optimasi routing policy</li>
+                <li>Mengimplementasikan dan memelihara protokol routing internal (OSPF) untuk memastikan kestabilan jaringan</li>
+                <li>Memonitor performa jaringan dan melakukan troubleshooting lanjutan, termasuk root cause analysis untuk meminimalkan downtime</li>
+                <li>Melakukan perencanaan dan manajemen IP address di berbagai segmen jaringan</li>
+                <li>Merancang dan mengelola infrastruktur virtualisasi berbasis Proxmox untuk mendukung layanan monitoring dan operasional internal</li>
+                <li>Mengembangkan aplikasi otomasi "Backuper" untuk backup rutin konfigurasi perangkat jaringan multi-vendor secara terjadwal dan terpusat</li>
+                <li>Mengembangkan aplikasi pengelola logistik internal untuk mendukung efisiensi operasional tim</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wireless Support -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="glass-card">
+            <div class="timeline-header">
+              <div class="timeline-role">Wireless Technical Support Operation</div>
+              <div class="timeline-company">PT Jembatan Citra Nusantara</div>
+              <div class="timeline-period">Jul 2020 — Jan 2021</div>
+            </div>
+            <div class="timeline-body">
+              <ul>
+                <li>Installasi dan perawatan jaringan LAN dan WLAN</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KEAHLIAN ===== -->
+    <section class="section" id="keahlian">
+      <h2 class="section-title reveal">
+        <i data-lucide="cpu" class="icon"></i>
+        Keahlian
+      </h2>
+
+      <div class="vendor-grid reveal">
+        <div class="vendor-badge"><i data-lucide="router" class="icon"></i> MikroTik</div>
+        <div class="vendor-badge"><i data-lucide="shield" class="icon"></i> Cisco</div>
+        <div class="vendor-badge"><i data-lucide="radio-tower" class="icon"></i> Huawei</div>
+        <div class="vendor-badge"><i data-lucide="network" class="icon"></i> Juniper</div>
+        <div class="vendor-badge"><i data-lucide="wifi" class="icon"></i> Aruba</div>
+        <div class="vendor-badge"><i data-lucide="wifi" class="icon"></i> UniFi</div>
+        <div class="vendor-badge"><i data-lucide="wifi" class="icon"></i> Cambium</div>
+        <div class="vendor-badge"><i data-lucide="wifi" class="icon"></i> Ruijie</div>
+        <div class="vendor-badge"><i data-lucide="wifi" class="icon"></i> TP-Link</div>
+        <div class="vendor-badge"><i data-lucide="wifi" class="icon"></i> D-Link</div>
+        <div class="vendor-badge"><i data-lucide="server" class="icon"></i> Proxmox</div>
+      </div>
+
+      <div class="skills-grid reveal">
+        <div class="skill-badge"><i data-lucide="network" class="icon"></i> Network Planning</div>
+        <div class="skill-badge"><i data-lucide="git-branch" class="icon"></i> Network Architecture</div>
+        <div class="skill-badge"><i data-lucide="wifi" class="icon"></i> Wireless Networking</div>
+        <div class="skill-badge"><i data-lucide="settings" class="icon"></i> Network Management</div>
+        <div class="skill-badge"><i data-lucide="search" class="icon"></i> Network Troubleshooting</div>
+        <div class="skill-badge"><i data-lucide="terminal" class="icon"></i> Network Configuration</div>
+        <div class="skill-badge"><i data-lucide="monitor" class="icon"></i> Computer Networking</div>
+        <div class="skill-badge"><i data-lucide="activity" class="icon"></i> Network Testing</div>
+        <div class="skill-badge"><i data-lucide="puzzle" class="icon"></i> Network Integration</div>
+        <div class="skill-badge"><i data-lucide="server" class="icon"></i> Network Virtualization</div>
+      </div>
+    </section>
+
+    <!-- ===== PROYEK ===== -->
+    <section class="section" id="proyek">
+      <h2 class="section-title reveal">
+        <i data-lucide="folder-git-2" class="icon"></i>
+        Proyek
+      </h2>
+
+      <div class="projects-grid">
+        <div class="project-card reveal delay-1">
+          <div class="project-header">
+            <div class="project-icon"><i data-lucide="hard-drive" class="icon"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/BadRush" target="_blank" title="GitHub"><i data-lucide="github" class="icon"></i></a>
+            </div>
+          </div>
+          <div class="project-name">Backuper</div>
+          <p class="project-desc">Aplikasi otomasi backup konfigurasi perangkat jaringan multi-vendor secara terjadwal dan terpusat. Mendukung MikroTik, Cisco, Huawei, dan Juniper.</p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">SSH</span>
+            <span class="project-tag">Multi-Vendor</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-2">
+          <div class="project-header">
+            <div class="project-icon"><i data-lucide="package" class="icon"></i></div>
+          </div>
+          <div class="project-name">Logistik App</div>
+          <p class="project-desc">Aplikasi pengelola logistik internal untuk manajemen aset dan inventaris perangkat jaringan, mendukung efisiensi operasional tim NOC.</p>
+          <div class="project-tags">
+            <span class="project-tag">Web App</span>
+            <span class="project-tag">Internal Tool</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-3">
+          <div class="project-header">
+            <div class="project-icon"><i data-lucide="activity" class="icon"></i></div>
+          </div>
+          <div class="project-name">NOC Monitoring Stack</div>
+          <p class="project-desc">Infrastruktur monitoring berbasis Proxmox untuk pemantauan performa jaringan real-time, termasuk Smokeping dan alerting system.</p>
+          <div class="project-tags">
+            <span class="project-tag">Proxmox</span>
+            <span class="project-tag">Docker</span>
+            <span class="project-tag">Monitoring</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERTIFIKAT ===== -->
+    <section class="section" id="sertifikat">
+      <h2 class="section-title reveal">
+        <i data-lucide="award" class="icon"></i>
+        Sertifikat
+      </h2>
+
+      <div class="certs-grid">
+        <div class="cert-card reveal delay-1">
+          <div class="cert-name">Training Juniper Networks</div>
+          <div class="cert-issuer">APJII DIY</div>
+          <div class="cert-period">Jul 2025</div>
+        </div>
+
+        <div class="cert-card reveal delay-1">
+          <div class="cert-name">MTCINE</div>
+          <div class="cert-full">MikroTik Certified Inter-networking Engineer</div>
+          <div class="cert-issuer">MikroTik</div>
+          <div class="cert-period">Dec 2024 — Dec 2027</div>
+        </div>
+
+        <div class="cert-card reveal delay-2">
+          <div class="cert-name">MTCTCE</div>
+          <div class="cert-full">MikroTik Certified Traffic Control Engineer</div>
+          <div class="cert-issuer">MikroTik</div>
+          <div class="cert-period">Nov 2022 — Nov 2025</div>
+        </div>
+
+        <div class="cert-card reveal delay-3">
+          <div class="cert-name">MTCNA</div>
+          <div class="cert-full">MikroTik Certified Network Associate</div>
+          <div class="cert-issuer">MikroTik</div>
+          <div class="cert-period">Sep 2019 — Mar 2023</div>
+        </div>
+
+        <div class="cert-card reveal delay-4">
+          <div class="cert-name">MTCRE</div>
+          <div class="cert-full">MikroTik Certified Routing Engineer</div>
+          <div class="cert-issuer">MikroTik</div>
+          <div class="cert-period">Sep 2019 — Mar 2023</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PENDIDIKAN ===== -->
+    <section class="section" id="pendidikan">
+      <h2 class="section-title reveal">
+        <i data-lucide="graduation-cap" class="icon"></i>
+        Pendidikan
+      </h2>
+
+      <div class="edu-list">
+        <div class="edu-card reveal">
+          <div class="edu-icon">
+            <i data-lucide="book-open" class="icon"></i>
+          </div>
+          <div>
+            <div class="edu-school">Universitas Terbuka Indonesia</div>
+            <div class="edu-major">Sistem dan Teknologi Informasi</div>
+            <div class="edu-period">Jul 2022 — Sekarang</div>
+          </div>
+        </div>
+
+        <div class="edu-card reveal">
+          <div class="edu-icon">
+            <i data-lucide="book-open" class="icon"></i>
+          </div>
+          <div>
+            <div class="edu-school">SMK Negeri 1 Banyumas</div>
+            <div class="edu-major">Komputer &amp; Jaringan</div>
+            <div class="edu-period">Jul 2017 — Jul 2020</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PENGHARGAAN ===== -->
+    <section class="section" id="penghargaan">
+      <h2 class="section-title reveal">
+        <i data-lucide="trophy" class="icon"></i>
+        Penghargaan
+      </h2>
+
+      <div class="glass-card reveal">
+        <div class="award-card">
+          <div class="award-icon">
+            <i data-lucide="medal" class="icon"></i>
+          </div>
+          <div>
+            <div class="award-title">Peringkat V — LKS IT Network System Administration</div>
+            <div class="award-issuer">Dinas Pendidikan Provinsi Jawa Tengah</div>
+            <div class="award-year">2019</div>
+            <p class="award-desc">
+              Lomba kompetensi siswa bidang lomba IT Network System Administration antar SMK jurusan TKJ tingkat Provinsi Jawa Tengah.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /.page-wrapper -->
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Kembali ke atas">
+    <i data-lucide="chevron-up" class="icon"></i>
+  </button>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-socials">
+        <a href="https://github.com/BadRush" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+          <i data-lucide="github" class="icon"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/anam-badrus-salam-33a60814a/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+          <i data-lucide="linkedin" class="icon"></i>
+        </a>
+        <a href="mailto:anamb4drus@gmail.com" class="social-link" title="Email">
+          <i data-lucide="mail" class="icon"></i>
+        </a>
+        <a href="http://t.me/anamBadrus" target="_blank" rel="noopener noreferrer" class="social-link" title="Telegram">
+          <i data-lucide="send" class="icon"></i>
+        </a>
+      </div>
+      <p class="footer-text">© 2026 Anam Badrus Salam. Dibuat dengan ❤️</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./res/script.js"></script>
+  <script>
+    // Initialize Lucide icons after page load
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
+  </script>
 </body>
 </html>
