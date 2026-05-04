@@ -115,13 +115,17 @@
 .footer-counter-value {
   display: inline-flex;
   align-items: center;
+  position: relative;
 }
-/* Hide the attribution link text only - keep injected content visible */
-.footer-counter-value a {
-  font-size: 0 !important;
-  color: transparent !important;
-  text-decoration: none !important;
-  line-height: 0 !important;
+/* 
+  Hide the attribution link without triggering the script's tamper protection.
+  The script checks if offsetHeight < 8. If we use font-size: 0, it fails and the script hides the numbers!
+  The script actually removes the text itself (innerHTML='') if it passes the check.
+*/
+.footer-counter-value > a[href*="counters-free.net"] {
+  opacity: 0.01; /* Prevent flashing before the script removes it */
+  position: absolute; /* Prevent it from taking space during load */
+  pointer-events: none;
 }
 /* Force ALL script-injected elements to be visible */
 .footer-counter-value img,
