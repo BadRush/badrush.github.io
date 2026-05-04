@@ -76,6 +76,63 @@
 
 /* ===== Footer ===== */
 .site-footer { border-top: 1px solid var(--border-glass); padding: 40px 24px; text-align: center; }
-.footer-inner { max-width: var(--max-width); margin: 0 auto; }
-.footer-socials { display: flex; gap: 12px; justify-content: center; margin-bottom: 16px; }
 .footer-text { font-size: 0.82rem; color: var(--text-muted); }
+
+.footer-counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  margin: 20px 0;
+  transition: all var(--transition);
+  backdrop-filter: blur(8px);
+  min-height: 48px;
+}
+.footer-counter:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 15px var(--accent-glow);
+  transform: translateY(-2px);
+}
+.footer-counter-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+.footer-counter-label .icon {
+  width: 14px;
+  height: 14px;
+  color: var(--accent);
+}
+/* Hide the attribution link text */
+.footer-counter a {
+  font-size: 0 !important;
+  color: transparent !important;
+  text-decoration: none !important;
+  line-height: 0 !important;
+}
+/* Ensure the counter digits are visible */
+.footer-counter a img,
+.footer-counter a span,
+.footer-counter img,
+.footer-counter span:not(.footer-counter-label span) {
+  font-size: 0.9rem !important;
+  color: var(--text-primary) !important;
+  line-height: normal !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+
+
+
