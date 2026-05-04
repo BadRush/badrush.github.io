@@ -1,0 +1,91 @@
+/* ===================================================
+   RESPONSIVE — Tablet, mobile, light mode, print
+   =================================================== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(10, 14, 23, 0.95);
+    backdrop-filter: blur(16px);
+    padding: 20px 24px;
+    gap: 16px;
+    border-bottom: 1px solid var(--border-glass);
+  }
+
+  .hero-name { font-size: 2rem; }
+  .hero-title { font-size: 0.95rem; }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .certs-grid { grid-template-columns: 1fr; }
+  .section { padding: 60px 20px; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero-name { font-size: 1.65rem; }
+  .hero-avatar { width: 120px; height: 120px; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .btn { width: 100%; justify-content: center; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .stat-item { display: flex; align-items: center; gap: 12px; text-align: left; padding: 14px 18px; }
+  .stat-value { font-size: 1.4rem; }
+  .glass-card { padding: 20px; }
+  .edu-card { flex-direction: column; gap: 12px; }
+  .award-card { flex-direction: column; align-items: center; text-align: center; }
+  .timeline { padding-left: 24px; }
+  .timeline-dot { left: -24px; width: 12px; height: 12px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .back-to-top { bottom: 20px; right: 20px; }
+  .section { padding: 48px 16px; }
+}
+
+/* ===== LIGHT MODE ===== */
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #e2e8f0;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-glass: rgba(255, 255, 255, 0.6);
+  --border-glass: rgba(0, 0, 0, 0.08);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --accent: #0891b2;
+  --accent-glow: rgba(8, 145, 178, 0.2);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] body::before {
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 20%, rgba(6, 182, 212, 0.06), transparent),
+    radial-gradient(ellipse 500px 500px at 80% 80%, rgba(139, 92, 246, 0.04), transparent);
+}
+
+[data-theme="light"] .navbar { background: rgba(248, 250, 252, 0.85); }
+[data-theme="light"] .hero-status { border-color: var(--bg-primary); }
+[data-theme="light"] .timeline-dot { background: var(--bg-primary); }
+
+/* ===== PRINT ===== */
+@media print {
+  body { background: #fff; color: #000; }
+  body::before { display: none; }
+  .navbar, .back-to-top, .theme-toggle, .hero-socials, .footer-socials,
+  .hero-actions, .nav-toggle { display: none !important; }
+  .glass-card, .cert-card, .edu-card, .skill-badge, .project-card {
+    background: #fff; border: 1px solid #ddd;
+    box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none;
+  }
+  .section { padding: 24px 0; }
+  .hero { min-height: auto; padding-top: 20px; }
+  .reveal { opacity: 1; transform: none; }
+  .stat-value { -webkit-text-fill-color: #0891b2; }
+  a { color: #0891b2; }
+}
