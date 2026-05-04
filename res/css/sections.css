@@ -115,21 +115,22 @@
 .footer-counter-value {
   display: inline-flex;
   align-items: center;
-  position: relative;
 }
-/* Hide the attribution link text only */
+/* Hide the attribution link text only - keep injected content visible */
 .footer-counter-value > a {
-  font-size: 0;
-  line-height: 0;
-  color: transparent;
+  overflow: hidden;
+  text-indent: -9999px;
   display: inline;
+  white-space: nowrap;
+  width: 0;
+  height: 0;
 }
-/* Make sure ALL injected content stays visible */
+/* Force ALL script-injected elements to be visible */
 .footer-counter-value img,
 .footer-counter-value table,
 .footer-counter-value td,
-.footer-counter-value a img,
-.footer-counter-value a span {
+.footer-counter-value span,
+.footer-counter-value div {
   display: inline-block !important;
   visibility: visible !important;
   opacity: 1 !important;
@@ -137,6 +138,10 @@
   line-height: normal !important;
   vertical-align: middle;
   max-height: 22px;
+  text-indent: 0 !important;
+  overflow: visible !important;
+  width: auto !important;
+  height: auto !important;
 }
 
 
