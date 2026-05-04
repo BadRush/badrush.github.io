@@ -111,35 +111,30 @@
   height: 14px;
   background: rgba(255, 255, 255, 0.1);
 }
-/* Counter value wrapper */
+/* Custom Counter Value */
 .footer-counter-value {
   display: inline-flex;
   align-items: center;
-  position: relative;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+  min-width: 40px;
+  justify-content: center;
 }
-/* 
-  Hide the attribution link without triggering the script's tamper protection.
-  The script checks if offsetHeight < 8. If we use font-size: 0, it fails and the script hides the numbers!
-  The script actually removes the text itself (innerHTML='') if it passes the check.
-*/
-.footer-counter-value > a[href*="counters-free.net"] {
-  opacity: 0.01; /* Prevent flashing before the script removes it */
-  position: absolute; /* Prevent it from taking space during load */
-  pointer-events: none;
+
+/* Loading animation */
+.loading-dots::after {
+  content: '...';
+  animation: dots 1.5s steps(4, end) infinite;
 }
-/* Force ALL script-injected elements to be visible */
-.footer-counter-value img,
-.footer-counter-value table,
-.footer-counter-value td,
-.footer-counter-value span,
-.footer-counter-value div {
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  font-size: 14px !important;
-  line-height: normal !important;
-  vertical-align: middle;
-  max-height: 22px;
+
+@keyframes dots {
+  0%, 20% { color: rgba(255,255,255,0); text-shadow: 0.25em 0 0 rgba(255,255,255,0), 0.5em 0 0 rgba(255,255,255,0); }
+  40% { color: var(--text-primary); text-shadow: 0.25em 0 0 rgba(255,255,255,0), 0.5em 0 0 rgba(255,255,255,0); }
+  60% { text-shadow: 0.25em 0 0 var(--text-primary), 0.5em 0 0 rgba(255,255,255,0); }
+  80%, 100% { text-shadow: 0.25em 0 0 var(--text-primary), 0.5em 0 0 var(--text-primary); }
 }
 
 

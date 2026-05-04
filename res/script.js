@@ -80,4 +80,57 @@ document.addEventListener('DOMContentLoaded', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  // ===== SUPABASE VISITOR COUNTER =====
+  const visitorCountElement = document.getElementById('visitor-count');
+  if (visitorCountElement) {
+    const SUPABASE_URL = 'https://sbhhepdzuhocnptkitlb.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNiaGhlcGR6dWhvY25wdGtpdGxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc4ODQ3MjksImV4cCI6MjA5MzQ2MDcyOX0.LoEBXVYnZLS-hTgu6BZcg3CsmWcZ6pp5TxZkDPwpzss';
+    
+    // Check if user already visited in the last hour to prevent spam
+    const lastVisit = localStorage.getItem('last_visit');
+    const now = new Date().getTime();
+    const oneHour = 60 * 60 * 1000;
+    
+    let shouldIncrement = true;
+    if (lastVisit && (now - parseInt(lastVisit)) < oneHour) {
+      shouldIncrement = false;
+    }
+
+    const endpoint = shouldIncrement ? '/rest/v1/rpc/increment_visitor' : '/rest/v1/visitor_stats?id=eq.1&select=view_count';
+    const method = shouldIncrement ? 'POST' : 'GET';
+    
+    fetch(`${SUPABASE_URL}${endpoint}`, {
+      method: method,
+      headers: {
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=representation'
+      }
+    })
+    .then(response => {
+      if (!response.ok) throw new Error('API Error');
+      return response.json();
+    })
+    .then(data => {
+      let count = 0;
+      if (shouldIncrement && typeof data === 'number') {
+        count = data;
+        localStorage.setItem('last_visit', now.toString());
+      } else if (!shouldIncrement && data && data.length > 0) {
+        count = data[0].view_count;
+      }
+      
+      if (count > 0) {
+        visitorCountElement.innerHTML = count.toLocaleString('en-US');
+      } else {
+        visitorCountElement.innerHTML = '---';
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching visitor count:', error);
+      visitorCountElement.innerHTML = '---';
+    });
+  }
 });
