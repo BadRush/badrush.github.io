@@ -82,63 +82,62 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  background: var(--bg-glass);
-  border: 1px solid var(--border-glass);
-  padding: 12px 24px;
-  border-radius: var(--radius-lg);
-  margin: 30px 0;
-  transition: all var(--transition);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin: 20px 0 16px;
+  opacity: 0.5;
+  transition: opacity var(--transition);
 }
 .footer-counter:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 20px var(--accent-glow);
-  transform: translateY(-2px);
+  opacity: 0.8;
+}
+.footer-counter-icon {
+  width: 13px;
+  height: 13px;
+  color: var(--text-muted);
 }
 .footer-counter-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--text-secondary);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  display: flex;
+  letter-spacing: 0.08em;
+}
+.footer-counter-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.1);
+}
+/* Counter value wrapper */
+.footer-counter-value {
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  white-space: nowrap;
+  position: relative;
 }
-.footer-counter-label .icon {
-  width: 16px;
-  height: 16px;
-  color: var(--accent);
+/* Hide the attribution link text only */
+.footer-counter-value > a {
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  display: inline;
 }
-/* Hide attribution but keep script working */
-.footer-counter a {
-  font-size: 0 !important;
-  color: transparent !important;
-  text-decoration: none !important;
-  line-height: 0 !important;
-  display: inline-block;
-}
-/* Style injected elements (images, spans, tables) */
-.footer-counter img,
-.footer-counter span:not(.footer-counter-label span),
-.footer-counter table,
-.footer-counter a * {
-  font-size: 0.9rem !important;
-  color: var(--text-primary) !important;
-  line-height: normal !important;
+/* Make sure ALL injected content stays visible */
+.footer-counter-value img,
+.footer-counter-value table,
+.footer-counter-value td,
+.footer-counter-value a img,
+.footer-counter-value a span {
   display: inline-block !important;
-  vertical-align: middle !important;
-  filter: none !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-size: 14px !important;
+  line-height: normal !important;
+  vertical-align: middle;
+  max-height: 22px;
 }
-.footer-counter table {
-  border-spacing: 0 !important;
-  border-collapse: collapse !important;
-}
-
-
 
 
 
