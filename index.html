@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
   <!-- Styles -->
   <link rel="stylesheet" href="./res/style.css">
@@ -34,18 +34,13 @@
         <a href="#tentang">Tentang</a>
         <a href="#pengalaman">Pengalaman</a>
         <a href="#keahlian">Keahlian</a>
-        <a href="#sertifikat">Sertifikat</a>
         <a href="#proyek">Proyek</a>
+        <a href="#sertifikat">Sertifikat</a>
         <a href="#pendidikan">Pendidikan</a>
       </div>
-      <div style="display:flex;align-items:center;gap:4px;">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle tema">
-          <i data-lucide="sun" class="icon"></i>
-        </button>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
@@ -56,7 +51,6 @@
       <div class="hero-content">
         <div class="hero-avatar-wrapper">
           <img src="./res/images/pp.jpg" alt="Foto profil Anam Badrus Salam" class="hero-avatar" id="hero-avatar">
-          <div class="hero-status" title="Tersedia untuk peluang baru"></div>
         </div>
 
         <h1 class="hero-name">Anam Badrus Salam</h1>
@@ -81,7 +75,7 @@
           <a href="https://github.com/BadRush" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub" id="social-github">
             <i data-lucide="github" class="icon"></i>
           </a>
-          <a href="https://www.linkedin.com/in/anam-badrus-salam-33a60814a/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" id="social-linkedin">
+          <a href="https://www.linkedin.com/in/anambadrus/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" id="social-linkedin">
             <i data-lucide="linkedin" class="icon"></i>
           </a>
           <a href="http://instagram.com/__badrus" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram" id="social-instagram">
@@ -197,8 +191,6 @@
         <div class="vendor-badge"><i data-lucide="wifi" class="icon"></i> UniFi</div>
         <div class="vendor-badge"><i data-lucide="wifi" class="icon"></i> Cambium</div>
         <div class="vendor-badge"><i data-lucide="wifi" class="icon"></i> Ruijie</div>
-        <div class="vendor-badge"><i data-lucide="wifi" class="icon"></i> TP-Link</div>
-        <div class="vendor-badge"><i data-lucide="wifi" class="icon"></i> D-Link</div>
         <div class="vendor-badge"><i data-lucide="server" class="icon"></i> Proxmox</div>
       </div>
 
@@ -295,6 +287,13 @@
           <div class="cert-period">Nov 2022 — Nov 2025</div>
         </div>
 
+        <div class="cert-card reveal delay-4">
+          <div class="cert-name">MTCRE</div>
+          <div class="cert-full">MikroTik Certified Routing Engineer</div>
+          <div class="cert-issuer">MikroTik</div>
+          <div class="cert-period">Sep 2019 — Mar 2023</div>
+        </div>
+
         <div class="cert-card reveal delay-3">
           <div class="cert-name">MTCNA</div>
           <div class="cert-full">MikroTik Certified Network Associate</div>
@@ -302,12 +301,6 @@
           <div class="cert-period">Sep 2019 — Mar 2023</div>
         </div>
 
-        <div class="cert-card reveal delay-4">
-          <div class="cert-name">MTCRE</div>
-          <div class="cert-full">MikroTik Certified Routing Engineer</div>
-          <div class="cert-issuer">MikroTik</div>
-          <div class="cert-period">Sep 2019 — Mar 2023</div>
-        </div>
       </div>
     </section>
 
@@ -369,7 +362,10 @@
 
   </div><!-- /.page-wrapper -->
 
-  <!-- Back to Top -->
+  <!-- Floating Controls -->
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle tema">
+    <i data-lucide="sun" class="icon"></i>
+  </button>
   <button class="back-to-top" id="back-to-top" aria-label="Kembali ke atas">
     <i data-lucide="chevron-up" class="icon"></i>
   </button>
