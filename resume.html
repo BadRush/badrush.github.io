@@ -25,43 +25,44 @@
     /* Strict 1-Page Layout */
     .page {
       width: 210mm;
-      height: 297mm; /* Fixed height for 1 page */
-      padding: 15mm 20mm;
+      min-height: 297mm;
+      padding: 10mm 15mm;
       margin: 10mm auto;
       background: #fff;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      overflow: hidden; /* Prevent spill over */
+      position: relative;
       display: flex;
       flex-direction: column;
     }
     
     @media print {
-      body { background: #fff; }
-      .page { margin: 0; padding: 15mm; box-shadow: none; width: 100%; height: 100%; }
+      @page { margin: 0; size: A4; }
+      body { background: #fff; margin: 0; padding: 0; }
+      .page { margin: 0; padding: 10mm 15mm; box-shadow: none; width: 210mm; height: 297mm; overflow: hidden; }
       .no-print { display: none; }
     }
     
     /* Header */
-    .header { border-bottom: 2px solid var(--primary); padding-bottom: 8px; margin-bottom: 12px; }
-    .name { font-size: 22pt; font-weight: 800; color: var(--primary); margin-bottom: 2px; letter-spacing: -0.5px; }
-    .role { font-size: 13pt; font-weight: 600; color: var(--accent); margin-bottom: 6px; }
-    .contacts { font-size: 8.5pt; display: flex; gap: 14px; color: var(--secondary); flex-wrap: wrap; }
+    .header { border-bottom: 2px solid var(--primary); padding-bottom: 6px; margin-bottom: 8px; }
+    .name { font-size: 20pt; font-weight: 800; color: var(--primary); margin-bottom: 2px; letter-spacing: -0.5px; }
+    .role { font-size: 12pt; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+    .contacts { font-size: 8pt; display: flex; gap: 12px; color: var(--secondary); flex-wrap: wrap; }
     .contacts a { color: var(--secondary); text-decoration: none; }
     
     /* Sections */
-    .section { margin-bottom: 12px; }
-    .section-title { font-size: 11pt; font-weight: 700; color: var(--primary); border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .section { margin-bottom: 10px; }
+    .section-title { font-size: 11pt; font-weight: 700; color: var(--primary); border-bottom: 1px solid #e2e8f0; padding-bottom: 1px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
     
     /* Summary */
     .summary { text-align: justify; font-size: 9.5pt; }
     
     /* Experience */
-    .exp-item { margin-bottom: 10px; }
-    .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
-    .exp-title { font-weight: 700; color: var(--primary); font-size: 10.5pt; }
-    .exp-company { font-weight: 600; color: var(--accent); font-size: 9.5pt; }
-    .exp-date { font-size: 8.5pt; font-family: 'Fira Code', monospace; color: #64748b; }
-    .exp-body { font-size: 9.5pt; margin-left: 14px; margin-top: 4px; }
+    .exp-item { margin-bottom: 8px; }
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px; }
+    .exp-title { font-weight: 700; color: var(--primary); font-size: 10pt; }
+    .exp-company { font-weight: 600; color: var(--accent); font-size: 9pt; }
+    .exp-date { font-size: 8pt; font-family: 'Fira Code', monospace; color: #64748b; }
+    .exp-body { font-size: 9pt; margin-left: 14px; margin-top: 2px; }
     .exp-body li { margin-bottom: 3px; text-align: justify; }
     
     /* Projects Grid */

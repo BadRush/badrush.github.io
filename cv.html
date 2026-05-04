@@ -27,15 +27,16 @@
     .page {
       width: 210mm;
       min-height: 297mm;
-      padding: 20mm;
+      padding: 10mm 20mm;
       margin: 10mm auto;
       background: #fff;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     
     @media print {
-      body { background: #fff; }
-      .page { margin: 0; padding: 15mm; box-shadow: none; width: 100%; min-height: auto; }
+      @page { margin: 0; size: A4; }
+      body { background: #fff; margin: 0; padding: 0; }
+      .page { margin: 0; padding: 10mm 15mm; box-shadow: none; width: 100%; min-height: auto; }
       .no-print { display: none; }
     }
     
