@@ -8,12 +8,13 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(10, 14, 23, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-glass);
-  transition: background var(--transition);
+  transition: all var(--transition);
 }
+.navbar.scrolled { background: rgba(10, 10, 10, 0.95); }
 
 .navbar-inner {
   max-width: var(--max-width);
@@ -43,25 +44,10 @@
   font-size: 0.875rem;
   font-weight: 500;
   transition: color var(--transition);
-  position: relative;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  transition: width var(--transition);
 }
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--text-primary);
-}
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  width: 100%;
 }
 
 /* Mobile hamburger */

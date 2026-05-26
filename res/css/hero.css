@@ -26,8 +26,7 @@
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--accent);
-  box-shadow: 0 0 30px var(--accent-glow);
+  border: 3px solid var(--border-glass);
   transition: transform var(--transition);
 }
 .hero-avatar:hover {

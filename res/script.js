@@ -55,13 +55,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ===== NAVBAR BACKGROUND ON SCROLL =====
   const navbar = document.querySelector('.navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.style.background = 'rgba(10, 14, 23, 0.95)';
-    } else {
-      navbar.style.background = 'rgba(10, 14, 23, 0.85)';
-    }
-  }, { passive: true });
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    }, { passive: true });
+  }
 
 
 

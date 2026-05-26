@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    image: diary-profile
+    container_name: diary-profile
+    build: .
+    restart: unless-stopped
+    ports:
+      - "4601:80"
+    networks:
+      - diary_default
+
+networks:
+  diary_default:
+    external: true

@@ -1,0 +1,11 @@
+{
+  "name": "badrush.github.io",
+  "version": "1.0.0",
+  "description": "Anam Badrus Salam Portfolio",
+  "scripts": {
+    "dev": "live-server --port=3000 --no-browser"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

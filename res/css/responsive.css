@@ -14,7 +14,7 @@
     top: 64px;
     left: 0;
     right: 0;
-    background: rgba(10, 14, 23, 0.95);
+    background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(16px);
     padding: 20px 24px;
     gap: 16px;
@@ -63,6 +63,6 @@
   .section { padding: 24px 0; }
   .hero { min-height: auto; padding-top: 20px; }
   .reveal { opacity: 1; transform: none; }
-  .stat-value { -webkit-text-fill-color: #0891b2; }
-  a { color: #0891b2; }
+  .stat-value { -webkit-text-fill-color: #222; }
+  a { color: #222; }
 }
