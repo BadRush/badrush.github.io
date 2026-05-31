@@ -35,5 +35,3 @@ package-lock.json
 README.md
 LICENSE
 
-# Nginx config is copied explicitly in Dockerfile
-nginx.conf
