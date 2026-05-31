@@ -1,1 +1,19 @@
 node_modules/
+
+# Environment & Secrets
+.env
+.env.*
+*.env
+*.pem
+*.key
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

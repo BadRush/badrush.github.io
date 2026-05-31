@@ -1,0 +1,39 @@
+# =====================================================
+# .dockerignore — Prevent sensitive files from entering
+# the Docker image / nginx html directory
+# =====================================================
+
+# Git
+.git
+.gitignore
+.gitconfig
+
+# Docker
+Dockerfile
+docker-compose.yml
+docker-compose*.yml
+.dockerignore
+
+# Node.js (not needed in production)
+node_modules
+package.json
+package-lock.json
+
+# Environment & secrets
+.env
+.env.*
+*.env
+
+# IDE / Editor
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Documentation (optional, keep README if desired)
+README.md
+LICENSE
+
+# Nginx config is copied explicitly in Dockerfile
+nginx.conf

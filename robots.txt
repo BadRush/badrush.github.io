@@ -1,4 +1,47 @@
 User-agent: *
 Allow: /
+Disallow: /.git/
+Disallow: /.env
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/
+
+# Legitimate bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Block known malicious scanners
+User-agent: sqlmap
+Disallow: /
+
+User-agent: nikto
+Disallow: /
+
+User-agent: dirbuster
+Disallow: /
+
+User-agent: nuclei
+Disallow: /
+
+User-agent: gobuster
+Disallow: /
+
+User-agent: WPScan
+Disallow: /
+
+User-agent: zgrab
+Disallow: /
+
+User-agent: masscan
+Disallow: /
 
 Sitemap: https://anambadrus.my.id/sitemap.xml
