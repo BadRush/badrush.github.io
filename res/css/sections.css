@@ -75,10 +75,10 @@
 .award-year { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
 
 /* ===== Footer ===== */
-.site-footer { border-top: 1px solid var(--border-glass); padding: 40px 24px; text-align: center; }
+.site-footer { border-top: 1px solid var(--border-glass); padding: 16px 24px; text-align: center; }
 .footer-text { font-size: 0.82rem; color: var(--text-muted); }
 
-.footer-counter {
+.visitor-counter {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -87,32 +87,32 @@
   border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  margin: 20px 0 16px;
+  margin: 16px 0 0;
   opacity: 0.5;
   transition: opacity var(--transition);
 }
-.footer-counter:hover {
+.visitor-counter:hover {
   opacity: 0.8;
 }
-.footer-counter-icon {
+.visitor-counter-icon {
   width: 13px;
   height: 13px;
   color: var(--text-muted);
 }
-.footer-counter-label {
+.visitor-counter-label {
   font-size: 0.7rem;
   font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
-.footer-counter-divider {
+.visitor-counter-divider {
   width: 1px;
   height: 14px;
   background: rgba(255, 255, 255, 0.1);
 }
 /* Custom Counter Value */
-.footer-counter-value {
+.visitor-counter-value {
   display: inline-flex;
   align-items: center;
   font-size: 1rem;
