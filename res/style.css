@@ -7,4 +7,5 @@
 @import url('./css/navbar.css');       /* Navigation bar */
 @import url('./css/hero.css');         /* Hero section */
 @import url('./css/sections.css');     /* About, timeline, skills, certs, projects, edu, awards, footer */
+@import url('./css/modal.css');        /* Project modal */
 @import url('./css/responsive.css');   /* Media queries, light mode, print */

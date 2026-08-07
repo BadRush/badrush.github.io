@@ -330,7 +330,7 @@
       </h2>
 
       <div class="projects-grid">
-        <div class="project-card reveal delay-1">
+        <div class="project-card reveal delay-1" data-project="backuper">
           <div class="project-header">
             <div class="project-icon"><i data-lucide="hard-drive" class="icon"></i></div>
             <div class="project-links">
@@ -338,7 +338,7 @@
             </div>
           </div>
           <div class="project-name">Backuper</div>
-          <p class="project-desc">Aplikasi otomasi backup konfigurasi perangkat jaringan multi-vendor secara terjadwal dan terpusat. Mendukung MikroTik, Cisco, Huawei, dan Juniper.</p>
+          <p class="project-desc">Aplikasi otomasi backup konfigurasi perangkat jaringan multi-vendor secara terjadwal dan terpusat. Mendukung MikroTik, Cisco, Huawei, dan Juniper, dan masih terus dikembangkan.</p>
           <div class="project-tags">
             <span class="project-tag">Python</span>
             <span class="project-tag">SSH</span>
@@ -346,7 +346,7 @@
           </div>
         </div>
 
-        <div class="project-card reveal delay-2">
+        <div class="project-card reveal delay-2" data-project="logistik">
           <div class="project-header">
             <div class="project-icon"><i data-lucide="package" class="icon"></i></div>
           </div>
@@ -358,7 +358,7 @@
           </div>
         </div>
 
-        <div class="project-card reveal delay-3">
+        <div class="project-card reveal delay-3" data-project="noc-monitoring">
           <div class="project-header">
             <div class="project-icon"><i data-lucide="activity" class="icon"></i></div>
           </div>
@@ -375,7 +375,7 @@
           </div>
         </div>
 
-        <div class="project-card reveal delay-4">
+        <div class="project-card reveal delay-4" data-project="smoke-notifier">
           <div class="project-header">
             <div class="project-icon"><i data-lucide="bell-ring" class="icon"></i></div>
             <div class="project-links">
@@ -391,7 +391,7 @@
           </div>
         </div>
 
-        <div class="project-card reveal delay-5">
+        <div class="project-card reveal delay-5" data-project="datacenter">
           <div class="project-header">
             <div class="project-icon"><i data-lucide="server" class="icon"></i></div>
           </div>
@@ -404,7 +404,7 @@
           </div>
         </div>
 
-        <div class="project-card reveal delay-6">
+        <div class="project-card reveal delay-6" data-project="speedtest">
           <div class="project-header">
             <div class="project-icon"><i data-lucide="globe" class="icon"></i></div>
           </div>
@@ -417,7 +417,7 @@
           </div>
         </div>
 
-        <div class="project-card reveal delay-7">
+        <div class="project-card reveal delay-7" data-project="shelter">
           <div class="project-header">
             <div class="project-icon"><i data-lucide="zap" class="icon"></i></div>
           </div>
@@ -546,6 +546,24 @@
       <span class="visitor-counter-value" id="visitor-count">
         <span class="loading-dots"></span>
       </span>
+    </div>
+  </div>
+
+  <!-- Modal Project -->
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3 id="modal-title">Judul Proyek</h3>
+      
+      <div class="modal-gallery">
+        <img id="modal-image" src="" alt="Project Mockup">
+      </div>
+      
+      <div id="modal-description" class="modal-desc"></div>
+      
+      <div id="modal-tags" class="modal-tags"></div>
+      
+      <div id="modal-links" class="modal-links"></div>
     </div>
   </div>
 
