@@ -145,12 +145,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectData = {
     "backuper": {
       title: "Backuper",
-      image: "./res/images/mockup-placeholder.png", 
+      image: "./res/images/backuper-mockup.png", 
       description: "<p>Aplikasi otomasi backup konfigurasi perangkat jaringan multi-vendor (MikroTik, Cisco, Huawei, Juniper) secara terjadwal dan terpusat.</p><p>Masih terus dikembangkan dengan fitur tambahan.</p>",
-      tags: ["Python", "SSH", "Multi-Vendor"],
-      links: [
-        { text: "Source Code", url: "https://github.com/BadRush", icon: "github" }
-      ]
+      tags: ["Python", "SSH", "Multi-Vendor"]
     },
     "logistik": {
       title: "Logistik App",
@@ -159,42 +156,14 @@ document.addEventListener('DOMContentLoaded', () => {
       tags: ["Web App", "Internal Tool"],
       links: []
     },
-    "noc-monitoring": {
-      title: "NOC Monitoring Stack",
-      image: "./res/images/mockup-placeholder.png",
-      description: "<p>Infrastruktur monitoring terpusat untuk pemantauan performa jaringan real-time. Memadukan Zabbix, LibreNMS, The Dude, dan PRTG, beserta visualisasi data tingkat lanjut menggunakan Grafana, InfluxDB, dan Smokeping.</p>",
-      tags: ["Zabbix", "LibreNMS", "Grafana", "InfluxDB", "Smokeping", "PRTG", "The Dude"],
-      links: []
-    },
     "smoke-notifier": {
       title: "Smoke Notifier",
       image: "./res/images/mockup-placeholder.png",
       description: "<p>Sistem notifikasi cerdas terintegrasi Telegram untuk memfilter dan mengirimkan alert status jaringan yang relevan, meminimalkan notifikasi spam.</p>",
       tags: ["Telegram API", "Alerting", "Python"],
       links: [
-        { text: "Source Code", url: "https://github.com/BadRush", icon: "github" }
+        { text: "Source Code", url: "https://github.com/BadRush/smoke-notifer", icon: "github" }
       ]
-    },
-    "datacenter": {
-      title: "Desain & Implementasi POP Data Center",
-      image: "./res/images/mockup-placeholder.png",
-      description: "<p>Perancangan dan setup infrastruktur Point of Presence (POP) Data Center internal. Meliputi instalasi server bare-metal, klaster Proxmox VE, deployment VPS, dan manajemen resource.</p>",
-      tags: ["Data Center POP", "Proxmox", "Virtualization"],
-      links: []
-    },
-    "speedtest": {
-      title: "CDN Speedtest & Globalping",
-      image: "./res/images/mockup-placeholder.png",
-      description: "<p>Implementasi dan optimasi node server Speedtest serta integrasi jaringan Globalping untuk pengukuran latensi dan performa routing secara terdistribusi.</p>",
-      tags: ["Speedtest Node", "Globalping", "Performance"],
-      links: []
-    },
-    "shelter": {
-      title: "End-to-End Shelter Integration",
-      image: "./res/images/mockup-placeholder.png",
-      description: "<p>Eksekusi pembangunan infrastruktur fisik shelter BTS/Node secara menyeluruh. Mencakup penyusunan RAB, desain topologi jaringan, instalasi hardware, penarikan kabel, hingga setup manajemen kelistrikan (power system).</p>",
-      tags: ["Topology Design", "RAB Estimation", "Hardware Install", "Power & Cabling"],
-      links: []
     }
   };
 
