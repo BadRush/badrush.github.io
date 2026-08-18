@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "logistik": {
       title: "Logistik App",
       image: "./res/images/mockup-placeholder.png",
-      description: "<p>Aplikasi pengelola logistik internal untuk manajemen aset dan inventaris perangkat jaringan, mendukung efisiensi operasional tim NOC.</p>",
+      description: "<p>Aplikasi web internal untuk manajemen inventaris aset Data Center serta perangkat jaringan, mendukung efisiensi operasional tim NOC.</p>",
       tags: ["Web App", "Internal Tool"],
       links: []
     },
