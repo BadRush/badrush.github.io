@@ -20,6 +20,8 @@ RUN rm -rf /usr/share/nginx/html/.git \
            /usr/share/nginx/html/package*.json \
            /usr/share/nginx/html/node_modules \
            /usr/share/nginx/html/.env* \
+           /usr/share/nginx/html/counter \
+           /usr/share/nginx/html/data \
     && echo "Sensitive files cleanup done."
 
 EXPOSE 80

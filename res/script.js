@@ -83,45 +83,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ===== REAL-TIME VISITOR COUNTER =====
+  // ===== SELF-HOSTED REAL-TIME VISITOR COUNTER =====
   const visitorCountElement = document.getElementById('visitor-count');
   if (visitorCountElement) {
-    const API_NAMESPACE = 'profil.anambadrus.my.id';
-    const API_KEY = 'visitors';
-    const BASE_OFFSET = 24077; // Baseline: 24.077 + 1 = 24.078
-    const COOLDOWN_MS = 30 * 60 * 1000; // 30 menit cooldown per perangkat
+    const DEFAULT_BASELINE = 24078;
     
-    // Render instan dari cache lokal atau nilai dasar
+    // Render instan dari cache lokal atau nilai dasar agar tampilan cepat tanpa kedip
     const cachedCount = localStorage.getItem('cached_visitor_count');
-    const initialDisplay = cachedCount ? parseInt(cachedCount, 10) : (BASE_OFFSET + 1);
+    const initialDisplay = cachedCount ? parseInt(cachedCount, 10) : DEFAULT_BASELINE;
     visitorCountElement.textContent = initialDisplay.toLocaleString('id-ID');
 
-    const lastVisit = localStorage.getItem('last_visit_time');
-    const now = Date.now();
-    const shouldIncrement = !lastVisit || (now - parseInt(lastVisit, 10)) > COOLDOWN_MS;
-    
-    const endpoint = shouldIncrement
-      ? `https://abacus.jasoncameron.dev/hit/${API_NAMESPACE}/${API_KEY}`
-      : `https://abacus.jasoncameron.dev/get/${API_NAMESPACE}/${API_KEY}`;
-
-    fetch(endpoint)
+    // Kirim request ke backend counter lokal via reverse proxy Nginx (/api/visitors).
+    // Backend Go memvalidasi cooldown 30 detik per IP pengunjung secara in-memory.
+    fetch('/api/visitors', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
       .then(response => {
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         return response.json();
       })
       .then(data => {
-        if (data && typeof data.value === 'number') {
-          const currentTotal = BASE_OFFSET + data.value;
-          visitorCountElement.textContent = currentTotal.toLocaleString('id-ID');
-          localStorage.setItem('cached_visitor_count', currentTotal.toString());
-          if (shouldIncrement) {
-            localStorage.setItem('last_visit_time', now.toString());
-          }
+        if (data && typeof data.count === 'number') {
+          visitorCountElement.textContent = data.count.toLocaleString('id-ID');
+          localStorage.setItem('cached_visitor_count', data.count.toString());
         }
       })
       .catch(error => {
-        console.warn('Visitor counter sync notice:', error);
-        const fallback = localStorage.getItem('cached_visitor_count') || (BASE_OFFSET + 1);
+        console.warn('Visitor counter local sync notice:', error);
+        const fallback = localStorage.getItem('cached_visitor_count') || DEFAULT_BASELINE;
         visitorCountElement.textContent = Number(fallback).toLocaleString('id-ID');
       });
   }

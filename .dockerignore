@@ -36,3 +36,8 @@ package-lock.json
 README.md
 LICENSE
 
+# Backend service & persistent data
+counter/
+data/
+
+
