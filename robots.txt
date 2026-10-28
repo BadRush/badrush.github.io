@@ -6,12 +6,17 @@ Disallow: /wp-admin/
 Disallow: /wp-includes/
 Disallow: /wp-content/
 
-# Legitimate bots
+# Search Engine Crawlers
 User-agent: Googlebot
 Allow: /
+Allow: /res/
+
+User-agent: Googlebot-Image
+Allow: /res/images/
 
 User-agent: Bingbot
 Allow: /
+Allow: /res/
 
 User-agent: facebookexternalhit
 Allow: /
@@ -19,7 +24,7 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
-# Block known malicious scanners
+# Block Known Malicious Scanners
 User-agent: sqlmap
 Disallow: /
 
@@ -44,4 +49,6 @@ Disallow: /
 User-agent: masscan
 Disallow: /
 
-Sitemap: https://anambadrus.my.id/sitemap.xml
+# Canonical Host & Sitemap
+Host: profil.anambadrus.my.id
+Sitemap: https://profil.anambadrus.my.id/sitemap.xml

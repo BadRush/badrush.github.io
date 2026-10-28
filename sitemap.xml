@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage & Portfolio -->
   <url>
-    <loc>https://anambadrus.my.id/</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://profil.anambadrus.my.id/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://profil.anambadrus.my.id/res/images/pp-2026.png</image:loc>
+      <image:title>Anam Badrus Salam — Network Engineer &amp; NOC</image:title>
+      <image:caption>Foto profil resmi Anam Badrus Salam</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://profil.anambadrus.my.id/res/images/backuper-mockup.png</image:loc>
+      <image:title>Backuper — Otomasi Backup Perangkat Jaringan Multi-Vendor</image:title>
+      <image:caption>Visualisasi proyek otomasi backup jaringan MikroTik, Cisco, Huawei, Juniper</image:caption>
+    </image:image>
   </url>
+
+  <!-- Digital CV -->
   <url>
-    <loc>https://anambadrus.my.id/resume.html</loc>
-    <lastmod>2026-05-27</lastmod>
+    <loc>https://profil.anambadrus.my.id/cv.html</loc>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- One-Page Professional Resume -->
   <url>
-    <loc>https://anambadrus.my.id/cv.html</loc>
-    <lastmod>2026-05-27</lastmod>
+    <loc>https://profil.anambadrus.my.id/resume.html</loc>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

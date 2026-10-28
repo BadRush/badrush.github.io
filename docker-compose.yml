@@ -1,16 +1,27 @@
-version: '3.8'
-
 services:
   web:
-    image: diary-profile
+    image: diary-profile:latest
     container_name: diary-profile
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: unless-stopped
     ports:
-      - "127.0.0.1:4601:80"
+      # Opsional: di-bind ke loopback host VM untuk direct testing/debug lokal
+      - "127.0.0.1:${PORT:-4601}:80"
     networks:
-      - diary_default
+      - web_net
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: diary-tunnel
+    restart: unless-stopped
+    command: tunnel run --token ${TUNNEL_TOKEN}
+    depends_on:
+      - web
+    networks:
+      - web_net
 
 networks:
-  diary_default:
-    external: true
+  web_net:
+    driver: bridge
