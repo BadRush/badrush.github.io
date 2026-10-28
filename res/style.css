@@ -486,45 +486,47 @@ body::before {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 8px 18px;
-  border-radius: var(--radius-full);
+  gap: 8px;
+  padding: 5px 12px;
+  border-radius: 6px;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   margin: 16px 0 0;
-  opacity: 0.5;
-  transition: opacity var(--transition);
+  opacity: 0.6;
+  transition: opacity var(--transition), border-color var(--transition);
 }
 .visitor-counter:hover {
-  opacity: 0.8;
+  opacity: 0.9;
+  border-color: rgba(255, 255, 255, 0.16);
 }
-.visitor-counter-icon {
-  width: 13px;
-  height: 13px;
+.visitor-counter-icon,
+.visitor-counter-icon svg {
+  width: 10px;
+  height: 10px;
   color: var(--text-muted);
+  stroke-width: 2.2;
 }
 .visitor-counter-label {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
 }
 .visitor-counter-divider {
   width: 1px;
-  height: 14px;
-  background: rgba(255, 255, 255, 0.1);
+  height: 11px;
+  background: rgba(255, 255, 255, 0.12);
 }
 /* Custom Counter Value */
 .visitor-counter-value {
   display: inline-flex;
   align-items: center;
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-primary);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   font-variant-numeric: tabular-nums;
-  min-width: 40px;
   justify-content: center;
 }
 
