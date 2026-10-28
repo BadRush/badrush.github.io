@@ -10,7 +10,8 @@ services:
       # Opsional: di-bind ke loopback host VM untuk direct testing/debug lokal
       - "127.0.0.1:${PORT:-4601}:80"
     networks:
-      - web_net
+      web_net:
+        ipv4_address: 10.118.2.2
 
   cloudflared:
     image: cloudflare/cloudflared:latest
@@ -20,8 +21,15 @@ services:
     depends_on:
       - web
     networks:
-      - web_net
+      web_net:
+        ipv4_address: 10.118.2.3
 
 networks:
   web_net:
+    name: profil_network
     driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.118.2.0/28
+          gateway: 10.118.2.1
