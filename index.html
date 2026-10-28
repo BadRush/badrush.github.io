@@ -122,5 +122,541 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js">
+  <!-- Lucide Icons (Self-hosted & Deferred for Instant Rendering) -->
+  <script src="./res/lucide.min.js" defer></script>
+
+  <!-- Styles (Consolidated Production Stylesheet) -->
+  <link rel="stylesheet" href="./res/style.css?v=20261028">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="nav-logo">anam<span>Badrus</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="#tentang">Tentang</a>
+        <a href="#pengalaman">Pengalaman</a>
+        <a href="#keahlian">Keahlian</a>
+        <a href="#proyek">Proyek</a>
+        <a href="#sertifikat">Sertifikat</a>
+        <a href="#pendidikan">Pendidikan</a>
+        <a href="https://diary.anambadrus.my.id" target="_blank" rel="noopener noreferrer">Catatan Harian</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- ===== HERO ===== -->
+    <header class="hero section" id="hero">
+      <div class="hero-content">
+        <div class="hero-avatar-wrapper">
+          <img src="./res/images/pp-2026.png" alt="Foto profil Anam Badrus Salam" class="hero-avatar" id="hero-avatar">
+        </div>
+
+        <h1 class="hero-name">Anam Badrus Salam</h1>
+        <p class="hero-title">Network Engineer | Network Architect</p>
+        <p class="hero-location">
+          <i data-lucide="map-pin" class="icon"></i>
+          Jakarta Selatan, Indonesia
+        </p>
+
+        <div class="hero-actions">
+          <a href="./cv.html" target="_blank" class="btn btn-primary" id="btn-view-cv">
+            <i data-lucide="file-badge" class="icon"></i>
+            Lihat CV Lengkap
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/BadRush" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub" id="social-github">
+            <img src="https://cdn.simpleicons.org/github/white" class="icon" alt="GitHub" />
+          </a>
+          <a href="https://www.linkedin.com/in/anambadrus/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" id="social-linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="mailto:anamb4drus@gmail.com" class="social-link" title="Email" id="social-email">
+            <img src="https://cdn.simpleicons.org/gmail/white" class="icon" alt="Email" />
+          </a>
+          <a href="http://instagram.com/__badrus" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram" id="social-instagram">
+            <img src="https://cdn.simpleicons.org/instagram/white" class="icon" alt="Instagram" />
+          </a>
+          <a href="http://t.me/anamBadrus" target="_blank" rel="noopener noreferrer" class="social-link" title="Telegram" id="social-telegram">
+            <img src="https://cdn.simpleicons.org/telegram/white" class="icon" alt="Telegram" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== TENTANG SAYA ===== -->
+    <section class="section" id="tentang">
+      <h2 class="section-title reveal">
+        <i data-lucide="user" class="icon"></i>
+        Tentang Saya
+      </h2>
+
+      <div class="glass-card reveal">
+        <p class="about-content">
+          Network Engineer dan Network Architect bersertifikasi <strong>MTCINE</strong> dengan pengalaman <strong>6+ tahun</strong> dalam merancang, membangun, dan mengoptimalkan infrastruktur jaringan ISP berskala besar. Menguasai arsitektur backbone multi-vendor (<strong>MikroTik, Cisco, Huawei, Juniper</strong>) dengan kapabilitas mengelola <strong>200+ node</strong> secara simultan, memastikan <strong>ketersediaan layanan (High Availability)</strong> dan kepatuhan terhadap komitmen SLA.
+        </p>
+        <p class="about-content">
+          Memiliki spesialisasi dalam perancangan protokol <em>routing</em> tingkat lanjut (<strong>BGP & OSPF</strong>), termasuk optimasi <em>routing policy</em>, <em>traffic engineering</em>, dan mitigasi anomali jaringan secara <em>real-time</em>. Berpengalaman membangun infrastruktur Data Center internal berbasis <strong>Proxmox VE</strong> serta mengorkestrasikan ekosistem monitoring terpusat (<strong>Zabbix, LibreNMS, The Dude, PRTG, Grafana, Smokeping</strong>) untuk menekan <em>downtime</em> melalui deteksi dan resolusi gangguan yang proaktif.
+        </p>
+        <p class="about-content">
+          Secara aktif mengembangkan solusi otomasi dan internal tools mulai dari backup konfigurasi multi-vendor otomatis, sistem alerting cerdas berbasis Telegram, hingga aplikasi manajemen inventaris aset Data Center dan perangkat jaringan menggunakan Python dan AI-Assisted Development untuk mengakselerasi efisiensi operasional tim NOC secara signifikan.
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-value">6+</div>
+            <div class="stat-label">Tahun Pengalaman</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">200+</div>
+            <div class="stat-label">Perangkat Jaringan</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">10+</div>
+            <div class="stat-label">Vendor Jaringan</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PENGALAMAN ===== -->
+    <section class="section" id="pengalaman">
+      <h2 class="section-title reveal">
+        <i data-lucide="briefcase" class="icon"></i>
+        Pengalaman Kerja
+      </h2>
+
+      <div class="timeline">
+        <!-- Varnion -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="glass-card">
+            <div class="timeline-header">
+              <div class="timeline-role">Staff Network Engineer & Technical Solution</div>
+              <div class="timeline-company">PT Varnion Technology Semesta</div>
+              <div class="timeline-period">Jun 2026 &mdash; Sekarang</div>
+            </div>
+            <div class="timeline-body">
+              <ul>
+                <li>Melakukan <em>onsite support</em> dan pemeliharaan infrastruktur IT secara menyeluruh, mencakup jaringan LAN, WLAN (Wi-Fi), dan perangkat operasional <em>end-user</em>.</li>
+                <li>Mengidentifikasi, menganalisis, dan menyelesaikan (<em>troubleshooting</em>) gangguan pada perangkat jaringan guna memastikan stabilitas konektivitas klien.</li>
+                <li>Menjalankan konfigurasi pada perangkat jaringan, termasuk manajemen alokasi <em>IP Address</em>, pengaturan <em>VLAN</em>, konfigurasi <em>SSID Wi-Fi</em>, serta instalasi <em>Access Point</em>.</li>
+                <li>Melakukan pemantauan lalu lintas data (<em>Network Monitoring</em>) secara proaktif, audit <em>Firewall/Security</em>, serta menyusun dokumentasi arsitektur jaringan.</li>
+                <li>Berkolaborasi intensif dengan tim <em>Network Operation Center</em> (NOC) dan IT internal untuk eskalasi insiden dan menjaga kelancaran operasional layanan.</li>
+              </ul>
+              <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px;">
+                <span class="project-tag">LAN/WLAN</span>
+                <span class="project-tag">Network Monitoring</span>
+                <span class="project-tag">Security</span>
+                <span class="project-tag">Cisco</span>
+                <span class="project-tag">MikroTik</span>
+                <span class="project-tag">H3C</span>
+                <span class="project-tag">Huawei</span>
+                <span class="project-tag">Ruijie</span>
+                <span class="project-tag">Omada</span>
+                <span class="project-tag">TP-Link</span>
+                <span class="project-tag">Aruba</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOC -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="glass-card">
+            <div class="timeline-header">
+              <div class="timeline-role" style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                Network Operation Center (NOC)
+                <span style="font-size: 0.75rem; padding: 2px 10px; border-radius: 20px; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); border: 1px solid var(--border-glass); font-weight: 700; letter-spacing: 0.5px; display:inline-flex; align-items:center;"><img src="https://cdn.simpleicons.org/mikrotik/white" class="icon" style="width:12px; height:12px; margin-right:4px;" />MTCINE</span>
+              </div>
+              <div class="timeline-company">PT Jembatan Citra Nusantara</div>
+              <div class="timeline-period">Jan 2021 &mdash; Mei 2026</div>
+            </div>
+            <div class="timeline-body">
+              <ul>
+                <li>Mengelola infrastruktur ISP backbone & distribusi dengan <strong>200+ node multi-vendor</strong> (MikroTik, Cisco, Huawei, Juniper), menjaga tingkat reliabilitas layanan yang tinggi.</li>
+                <li>Merancang dan memelihara protokol routing dinamis <strong>(BGP & OSPF)</strong>, termasuk optimasi routing policy, manipulasi traffic, dan mitigasi anomali jaringan secara real-time.</li>
+                <li>Membangun dan mengelola klaster virtualisasi <strong>Proxmox VE</strong> untuk menampung seluruh beban kerja sistem monitoring terpusat dan layanan operasional NOC.</li>
+                <li>Menekan waktu <em>downtime</em> dengan melakukan isolasi gangguan tingkat L2/L3 serta <strong>Root Cause Analysis (RCA)</strong> secara proaktif dan terukur.</li>
+                <li>Memanfaatkan <strong>Prompt Engineering & AI-Assisted Development</strong> untuk merancang arsitektur dan mendeploy <strong>internal tools otomasi</strong> (Python, Web App), memangkas waktu <em>development</em> secara signifikan.</li>
+                <li>Bertanggung jawab penuh atas manajemen kapasitas dan hierarki alokasi <strong>IP Address</strong> (publik dan privat) di seluruh topologi jaringan.</li>
+              </ul>
+              <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px;">
+                <span class="project-tag">BGP</span>
+                <span class="project-tag">OSPF</span>
+                <span class="project-tag">MikroTik</span>
+                <span class="project-tag">Cisco</span>
+                <span class="project-tag">Proxmox</span>
+                <span class="project-tag">Python Automation</span>
+                <span class="project-tag">Prompt Engineering</span>
+                <span class="project-tag">AI-Assisted Dev</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wireless Support -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="glass-card">
+            <div class="timeline-header">
+              <div class="timeline-role">Wireless Technical Support Officer</div>
+              <div class="timeline-company">PT Jembatan Citra Nusantara</div>
+              <div class="timeline-period">Jul 2020 &mdash; Jan 2021</div>
+            </div>
+            <div class="timeline-body">
+              <ul>
+                <li>Melakukan instalasi, konfigurasi, dan pemeliharaan perangkat <strong>Wireless Access Point</strong> serta jaringan <strong>FTTH (Fiber To The Home)</strong> di lapangan untuk pelanggan korporat dan retail.</li>
+                <li>Melaksanakan pekerjaan fisik infrastruktur telekomunikasi, termasuk pemanjatan dan instalasi perangkat radio pada <strong>Tower BTS</strong> sesuai standar keselamatan operasional.</li>
+                <li>Melakukan perakitan dan instalasi <strong>Rack Server/Shelter BTS</strong> secara end-to-end, meliputi pembacaan diagram, manajemen kelistrikan (power system), dan integrasi perangkat jaringan.</li>
+                <li>Bertindak sebagai <strong>Technical Support & Helpdesk</strong>, menangani keluhan pelanggan, mendiagnosis masalah konektivitas, dan memberikan solusi teknis secara responsif.</li>
+                <li>Melakukan perawatan preventif dan perbaikan (troubleshooting) jaringan <strong>LAN dan WLAN</strong> guna memastikan kualitas layanan (SLA) tetap terjaga.</li>
+              </ul>
+              <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px;">
+                <span class="project-tag">FTTH</span>
+                <span class="project-tag">Wireless AP</span>
+                <span class="project-tag">Tower BTS</span>
+                <span class="project-tag">Site Integration</span>
+                <span class="project-tag">Helpdesk</span>
+                <span class="project-tag">Tech Support</span>
+                <span class="project-tag">LAN / WLAN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KEAHLIAN ===== -->
+    <section class="section" id="keahlian">
+      <h2 class="section-title reveal">
+        <i data-lucide="cpu" class="icon"></i>
+        Keahlian
+      </h2>
+
+      <div class="vendor-grid reveal">
+        <div class="vendor-badge"><img src="https://cdn.simpleicons.org/mikrotik/white" class="icon" alt="MikroTik" /> MikroTik</div>
+        <div class="vendor-badge"><img src="https://cdn.simpleicons.org/cisco/white" class="icon" alt="Cisco" /> Cisco</div>
+        <div class="vendor-badge"><img src="https://cdn.simpleicons.org/huawei/white" class="icon" alt="Huawei" /> Huawei</div>
+        <div class="vendor-badge"><img src="https://cdn.simpleicons.org/junipernetworks/white" class="icon" alt="Juniper" /> Juniper</div>
+        <div class="vendor-badge"><i data-lucide="wifi" class="icon"></i> Aruba</div>
+        <div class="vendor-badge"><img src="https://cdn.simpleicons.org/ubiquiti/white" class="icon" alt="UniFi" /> UniFi</div>
+        <div class="vendor-badge"><i data-lucide="wifi" class="icon"></i> Cambium</div>
+        <div class="vendor-badge"><i data-lucide="wifi" class="icon"></i> Ruijie</div>
+        <div class="vendor-badge"><img src="https://cdn.simpleicons.org/tplink/white" class="icon" alt="TP-Link" /> TP-Link Omada</div>
+        <div class="vendor-badge"><img src="https://cdn.simpleicons.org/proxmox/white" class="icon" alt="Proxmox" /> Proxmox</div>
+      </div>
+
+      <div class="skills-grid reveal">
+        <div class="skill-badge"><i data-lucide="network" class="icon"></i> Network Planning</div>
+        <div class="skill-badge"><i data-lucide="git-branch" class="icon"></i> Network Architecture</div>
+        <div class="skill-badge"><i data-lucide="wifi" class="icon"></i> Wireless Networking</div>
+        <div class="skill-badge"><i data-lucide="settings" class="icon"></i> Network Management</div>
+        <div class="skill-badge"><i data-lucide="search" class="icon"></i> Network Troubleshooting</div>
+        <div class="skill-badge"><i data-lucide="terminal" class="icon"></i> Network Configuration</div>
+        <div class="skill-badge"><i data-lucide="monitor" class="icon"></i> Computer Networking</div>
+        <div class="skill-badge"><i data-lucide="activity" class="icon"></i> Network Testing</div>
+        <div class="skill-badge"><i data-lucide="puzzle" class="icon"></i> Network Integration</div>
+        <div class="skill-badge"><i data-lucide="server" class="icon"></i> Network Virtualization</div>
+        <div class="skill-badge"><i data-lucide="bot" class="icon"></i> Prompt Engineering</div>
+        <div class="skill-badge"><i data-lucide="code" class="icon"></i> AI-Assisted Dev</div>
+        <div class="skill-badge"><i data-lucide="monitor" class="icon"></i> Zabbix</div>
+        <div class="skill-badge"><i data-lucide="eye" class="icon"></i> LibreNMS</div>
+        <div class="skill-badge"><img src="https://cdn.simpleicons.org/grafana/white" class="icon" alt="Grafana" /> Grafana</div>
+        <div class="skill-badge"><img src="https://cdn.simpleicons.org/influxdb/white" class="icon" alt="InfluxDB" /> InfluxDB</div>
+        <div class="skill-badge"><i data-lucide="activity" class="icon"></i> Cacti & Smokeping</div>
+      </div>
+    </section>
+
+    <!-- ===== PROYEK ===== -->
+    <section class="section" id="proyek">
+      <h2 class="section-title reveal">
+        <i data-lucide="folder-git-2" class="icon"></i>
+        Proyek
+      </h2>
+
+      <div class="projects-grid">
+        <div class="project-card reveal delay-1" data-project="backuper">
+          <div class="project-header">
+            <div class="project-icon"><i data-lucide="hard-drive" class="icon"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/BadRush" target="_blank" title="GitHub"><i data-lucide="github" class="icon"></i></a>
+            </div>
+          </div>
+          <div class="project-name">Backuper</div>
+          <p class="project-desc">Aplikasi otomasi backup konfigurasi perangkat jaringan multi-vendor secara terjadwal dan terpusat. Mendukung MikroTik, Cisco, Huawei, dan Juniper, dan masih terus dikembangkan.</p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">SSH</span>
+            <span class="project-tag">Multi-Vendor</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-2" data-project="logistik">
+          <div class="project-header">
+            <div class="project-icon"><i data-lucide="package" class="icon"></i></div>
+          </div>
+          <div class="project-name">Logistik App</div>
+          <p class="project-desc">Aplikasi pengelola logistik & inventaris internal untuk manajemen aset Data Center serta perangkat jaringan, mendukung efisiensi operasional tim NOC.</p>
+          <div class="project-tags">
+            <span class="project-tag">Web App</span>
+            <span class="project-tag">Internal Tool</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-3" data-project="noc-monitoring">
+          <div class="project-header">
+            <div class="project-icon"><i data-lucide="activity" class="icon"></i></div>
+          </div>
+          <div class="project-name">NOC Monitoring Stack</div>
+          <p class="project-desc">Infrastruktur monitoring terpusat untuk pemantauan performa jaringan real-time. Memadukan Zabbix, LibreNMS, The Dude, dan PRTG, beserta visualisasi data tingkat lanjut menggunakan Grafana, InfluxDB, dan Smokeping.</p>
+          <div class="project-tags">
+            <span class="project-tag">Zabbix</span>
+            <span class="project-tag">LibreNMS</span>
+            <span class="project-tag">Grafana</span>
+            <span class="project-tag">InfluxDB</span>
+            <span class="project-tag">Smokeping</span>
+            <span class="project-tag">PRTG</span>
+            <span class="project-tag">The Dude</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-4" data-project="smoke-notifier">
+          <div class="project-header">
+            <div class="project-icon"><i data-lucide="bell-ring" class="icon"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/BadRush" target="_blank" title="GitHub"><i data-lucide="github" class="icon"></i></a>
+            </div>
+          </div>
+          <div class="project-name">Smoke Notifier</div>
+          <p class="project-desc">Sistem notifikasi cerdas terintegrasi Telegram untuk memfilter dan mengirimkan alert status jaringan yang relevan, meminimalkan notifikasi spam.</p>
+          <div class="project-tags">
+            <span class="project-tag">Telegram API</span>
+            <span class="project-tag">Alerting</span>
+            <span class="project-tag">Python</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-5" data-project="datacenter">
+          <div class="project-header">
+            <div class="project-icon"><i data-lucide="server" class="icon"></i></div>
+          </div>
+          <div class="project-name">Desain & Implementasi POP Data Center</div>
+          <p class="project-desc">Perancangan dan setup infrastruktur Point of Presence (POP) Data Center internal. Meliputi instalasi server bare-metal, klaster Proxmox VE, deployment VPS, dan manajemen resource.</p>
+          <div class="project-tags">
+            <span class="project-tag">Data Center POP</span>
+            <span class="project-tag">Proxmox</span>
+            <span class="project-tag">Virtualization</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-6" data-project="speedtest">
+          <div class="project-header">
+            <div class="project-icon"><i data-lucide="globe" class="icon"></i></div>
+          </div>
+          <div class="project-name">CDN Speedtest & Globalping</div>
+          <p class="project-desc">Implementasi dan optimasi node server Speedtest serta integrasi jaringan Globalping untuk pengukuran latensi dan performa routing secara terdistribusi.</p>
+          <div class="project-tags">
+            <span class="project-tag">Speedtest Node</span>
+            <span class="project-tag">Globalping</span>
+            <span class="project-tag">Performance</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-7" data-project="shelter">
+          <div class="project-header">
+            <div class="project-icon"><i data-lucide="zap" class="icon"></i></div>
+          </div>
+          <div class="project-name">End-to-End Shelter Integration</div>
+          <p class="project-desc">Eksekusi pembangunan infrastruktur fisik shelter BTS/Node secara menyeluruh. Mencakup penyusunan RAB, desain topologi jaringan, instalasi hardware, penarikan kabel, hingga setup manajemen kelistrikan (power system).</p>
+          <div class="project-tags">
+            <span class="project-tag">Topology Design</span>
+            <span class="project-tag">RAB Estimation</span>
+            <span class="project-tag">Hardware Install</span>
+            <span class="project-tag">Power & Cabling</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ===== SERTIFIKAT ===== -->
+    <section class="section" id="sertifikat">
+      <h2 class="section-title reveal">
+        <i data-lucide="award" class="icon"></i>
+        Sertifikat
+      </h2>
+
+      <div class="certs-grid">
+        <div class="cert-card reveal delay-1">
+          <div class="cert-name"><img src="https://cdn.simpleicons.org/tplink/white" class="icon" style="width:16px;height:16px;margin-right:6px;vertical-align:-2px;" />OCNA Wireless</div>
+          <div class="cert-full">Omada Certified Network Administrator - Wireless</div>
+          <div class="cert-issuer">Omada by TP-Link</div>
+          <div class="cert-period">Aug 2026 &mdash; Aug 2029</div>
+        </div>
+
+        <div class="cert-card reveal delay-1">
+          <div class="cert-name"><img src="https://cdn.simpleicons.org/tplink/white" class="icon" style="width:16px;height:16px;margin-right:6px;vertical-align:-2px;" />OCNA RS</div>
+          <div class="cert-full">Omada Certified Network Administrator - Routing & Switching</div>
+          <div class="cert-issuer">Omada by TP-Link</div>
+          <div class="cert-period">Jul 2026 &mdash; Jul 2029</div>
+        </div>
+
+        <div class="cert-card reveal delay-1">
+          <div class="cert-name"><img src="https://cdn.simpleicons.org/junipernetworks/white" class="icon" style="width:16px;height:16px;margin-right:6px;vertical-align:-2px;" />Training Juniper Networks</div>
+          <div class="cert-issuer">APJII DIY</div>
+          <div class="cert-period">Jul 2025</div>
+        </div>
+
+        <div class="cert-card reveal delay-1">
+          <div class="cert-name"><img src="https://cdn.simpleicons.org/mikrotik/white" class="icon" style="width:16px;height:16px;margin-right:6px;vertical-align:-2px;" />MTCINE</div>
+          <div class="cert-full">MikroTik Certified Inter-networking Engineer</div>
+          <div class="cert-issuer">MikroTik</div>
+          <div class="cert-period">Dec 2024 &mdash; Dec 2027</div>
+        </div>
+
+        <div class="cert-card reveal delay-2">
+          <div class="cert-name"><img src="https://cdn.simpleicons.org/mikrotik/white" class="icon" style="width:16px;height:16px;margin-right:6px;vertical-align:-2px;" />MTCTCE</div>
+          <div class="cert-full">MikroTik Certified Traffic Control Engineer</div>
+          <div class="cert-issuer">MikroTik</div>
+          <div class="cert-period">Nov 2022 &mdash; Nov 2025</div>
+        </div>
+
+        <div class="cert-card reveal delay-4">
+          <div class="cert-name"><img src="https://cdn.simpleicons.org/mikrotik/white" class="icon" style="width:16px;height:16px;margin-right:6px;vertical-align:-2px;" />MTCRE</div>
+          <div class="cert-full">MikroTik Certified Routing Engineer</div>
+          <div class="cert-issuer">MikroTik</div>
+          <div class="cert-period">Sep 2019 &mdash; Mar 2023</div>
+        </div>
+
+        <div class="cert-card reveal delay-3">
+          <div class="cert-name"><img src="https://cdn.simpleicons.org/mikrotik/white" class="icon" style="width:16px;height:16px;margin-right:6px;vertical-align:-2px;" />MTCNA</div>
+          <div class="cert-full">MikroTik Certified Network Associate</div>
+          <div class="cert-issuer">MikroTik</div>
+          <div class="cert-period">Sep 2019 &mdash; Mar 2023</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== PENDIDIKAN ===== -->
+    <section class="section" id="pendidikan">
+      <h2 class="section-title reveal">
+        <i data-lucide="graduation-cap" class="icon"></i>
+        Pendidikan
+      </h2>
+
+      <div class="edu-list">
+        <div class="edu-card reveal">
+          <div class="edu-icon">
+            <i data-lucide="book-open" class="icon"></i>
+          </div>
+          <div>
+            <div class="edu-school">Universitas Terbuka Indonesia</div>
+            <div class="edu-major">Sistem dan Teknologi Informasi</div>
+            <div class="edu-period">Jul 2022 &mdash; 2026 (Menunggu Wisuda)</div>
+          </div>
+        </div>
+
+        <div class="edu-card reveal">
+          <div class="edu-icon">
+            <i data-lucide="book-open" class="icon"></i>
+          </div>
+          <div>
+            <div class="edu-school">SMK Negeri 1 Banyumas</div>
+            <div class="edu-major">Komputer &amp; Jaringan</div>
+            <div class="edu-period">Jul 2017 &mdash; Jul 2020</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PENGHARGAAN ===== -->
+    <section class="section" id="penghargaan">
+      <h2 class="section-title reveal">
+        <i data-lucide="trophy" class="icon"></i>
+        Penghargaan
+      </h2>
+
+      <div class="glass-card reveal">
+        <div class="award-card">
+          <div class="award-icon">
+            <i data-lucide="medal" class="icon"></i>
+          </div>
+          <div>
+            <div class="award-title">Peringkat V &mdash; LKS IT Network System Administration</div>
+            <div class="award-issuer">Dinas Pendidikan Provinsi Jawa Tengah</div>
+            <div class="award-year">2019</div>
+            <p class="award-desc">
+              Lomba kompetensi siswa bidang lomba IT Network System Administration antar SMK jurusan TKJ tingkat Provinsi Jawa Tengah.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /.page-wrapper -->
+
+  <div style="text-align: center; margin-bottom: 24px;">
+    <div class="visitor-counter" id="visitor-counter" style="margin: 0;">
+      <i data-lucide="eye" class="visitor-counter-icon"></i>
+      <span class="visitor-counter-label">Visitors</span>
+      <span class="visitor-counter-divider"></span>
+      <span class="visitor-counter-value" id="visitor-count">
+        <span class="loading-dots"></span>
+      </span>
+    </div>
+  </div>
+
+  <!-- Modal Project -->
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3 id="modal-title">Judul Proyek</h3>
+      
+      <div class="modal-gallery">
+        <img id="modal-image" src="" alt="Project Mockup">
+      </div>
+      
+      <div id="modal-description" class="modal-desc"></div>
+      
+      <div id="modal-tags" class="modal-tags"></div>
+      
+      <div id="modal-links" class="modal-links"></div>
+    </div>
+  </div>
+
+  <!-- Floating Controls -->
+  <button class="back-to-top" id="back-to-top" aria-label="Kembali ke atas">
+    <i data-lucide="chevron-up" class="icon"></i>
+  </button>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-text">&copy; 2026 Anam Badrus Salam.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./res/script.js"></script>
+  <script>
+    // Initialize Lucide icons after page load
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
