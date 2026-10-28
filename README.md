@@ -11,7 +11,7 @@ Website portofolio pribadi dan CV digital yang dirancang untuk menampilkan penga
 - **Fully Responsive & Mobile-First**: Dioptimalkan untuk perangkat mobile, tablet, dan desktop dengan Google Mobile-Friendly compliance.
 - **Optimal Google Indexing**: Didukung XML Sitemap dengan ekstensi Google Image, `robots.txt` ramah crawler, serta schema terstruktur Schema.org `ProfilePage` & `Person`.
 - **Interactive Experience**: Animasi *Scroll Reveal* dan ikon vektor interaktif menggunakan Lucide & Simple Icons.
-- **Visitor Statistics**: Pelacakan statistik kunjungan situs secara *real-time* terintegrasi Supabase REST API.
+- **Visitor Statistics**: Pelacakan statistik pengunjung situs secara *real-time* terintegrasi Abacus Counting API (basis hitungan dimulai dari 24.078).
 - **Quick Links**: Akses cepat ke Resume, CV Lengkap, dan kanal komunikasi (LinkedIn, GitHub, Telegram).
 
 ---

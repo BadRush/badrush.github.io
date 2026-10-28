@@ -83,57 +83,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ===== SUPABASE VISITOR COUNTER =====
+  // ===== REAL-TIME VISITOR COUNTER =====
   const visitorCountElement = document.getElementById('visitor-count');
   if (visitorCountElement) {
-    const SUPABASE_URL = 'https://sbhhepdzuhocnptkitlb.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNiaGhlcGR6dWhvY25wdGtpdGxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc4ODQ3MjksImV4cCI6MjA5MzQ2MDcyOX0.LoEBXVYnZLS-hTgu6BZcg3CsmWcZ6pp5TxZkDPwpzss';
+    const API_NAMESPACE = 'profil.anambadrus.my.id';
+    const API_KEY = 'visitors';
+    const BASE_OFFSET = 24077; // Baseline: 24.077 + 1 = 24.078
+    const COOLDOWN_MS = 30 * 60 * 1000; // 30 menit cooldown per perangkat
     
-    // Check if user already visited in the last hour to prevent spam
-    const lastVisit = localStorage.getItem('last_visit');
-    const now = new Date().getTime();
-    const oneHour = 60 * 60 * 1000;
-    
-    let shouldIncrement = true;
-    if (lastVisit && (now - parseInt(lastVisit)) < oneHour) {
-      shouldIncrement = false;
-    }
+    // Render instan dari cache lokal atau nilai dasar
+    const cachedCount = localStorage.getItem('cached_visitor_count');
+    const initialDisplay = cachedCount ? parseInt(cachedCount, 10) : (BASE_OFFSET + 1);
+    visitorCountElement.textContent = initialDisplay.toLocaleString('id-ID');
 
-    const endpoint = shouldIncrement ? '/rest/v1/rpc/increment_visitor' : '/rest/v1/visitor_stats?id=eq.1&select=view_count';
-    const method = shouldIncrement ? 'POST' : 'GET';
+    const lastVisit = localStorage.getItem('last_visit_time');
+    const now = Date.now();
+    const shouldIncrement = !lastVisit || (now - parseInt(lastVisit, 10)) > COOLDOWN_MS;
     
-    fetch(`${SUPABASE_URL}${endpoint}`, {
-      method: method,
-      headers: {
-        'apikey': SUPABASE_ANON_KEY,
-        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-        'Content-Type': 'application/json',
-        'Prefer': 'return=representation'
-      }
-    })
-    .then(response => {
-      if (!response.ok) throw new Error('API Error');
-      return response.json();
-    })
-    .then(data => {
-      let count = 0;
-      if (shouldIncrement && typeof data === 'number') {
-        count = data;
-        localStorage.setItem('last_visit', now.toString());
-      } else if (!shouldIncrement && data && data.length > 0) {
-        count = data[0].view_count;
-      }
-      
-      if (count > 0) {
-        visitorCountElement.innerHTML = count.toLocaleString('en-US');
-      } else {
-        visitorCountElement.innerHTML = '---';
-      }
-    })
-    .catch(error => {
-      console.error('Error fetching visitor count:', error);
-      visitorCountElement.innerHTML = '---';
-    });
+    const endpoint = shouldIncrement
+      ? `https://abacus.jasoncameron.dev/hit/${API_NAMESPACE}/${API_KEY}`
+      : `https://abacus.jasoncameron.dev/get/${API_NAMESPACE}/${API_KEY}`;
+
+    fetch(endpoint)
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then(data => {
+        if (data && typeof data.value === 'number') {
+          const currentTotal = BASE_OFFSET + data.value;
+          visitorCountElement.textContent = currentTotal.toLocaleString('id-ID');
+          localStorage.setItem('cached_visitor_count', currentTotal.toString());
+          if (shouldIncrement) {
+            localStorage.setItem('last_visit_time', now.toString());
+          }
+        }
+      })
+      .catch(error => {
+        console.warn('Visitor counter sync notice:', error);
+        const fallback = localStorage.getItem('cached_visitor_count') || (BASE_OFFSET + 1);
+        visitorCountElement.textContent = Number(fallback).toLocaleString('id-ID');
+      });
   }
 
   // ===== MODAL PROJECT =====
