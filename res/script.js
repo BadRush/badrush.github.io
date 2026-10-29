@@ -127,26 +127,57 @@ document.addEventListener('DOMContentLoaded', () => {
   // Data proyek untuk isi modal
   const projectData = {
     "backuper": {
-      title: "Backuper",
+      title: "Backuper — Multi-Vendor Network Config Backup",
       image: "./res/images/backuper-mockup.png", 
-      description: "<p>Aplikasi otomasi backup konfigurasi perangkat jaringan multi-vendor (MikroTik, Cisco, Huawei, Juniper) secara terjadwal dan terpusat.</p><p>Masih terus dikembangkan dengan fitur tambahan.</p>",
-      tags: ["Python", "SSH", "Multi-Vendor"]
+      description: "<p>Aplikasi otomasi backup konfigurasi perangkat jaringan multi-vendor secara terjadwal dan terpusat. Mendukung perangkat MikroTik, Cisco, Huawei, dan Juniper via protokol SSH aman. Dilengkapi fitur enkripsi file backup, rotasi penyimpanan, dan notifikasi status eksekusi otomatis.</p>",
+      tags: ["Python", "Paramiko", "SSH", "Multi-Vendor", "Automation"],
+      links: [
+        { text: "Source Code", url: "https://github.com/BadRush", icon: "github" }
+      ]
     },
     "logistik": {
-      title: "Logistik App",
+      title: "Logistik App — Asset & Inventory Management",
       image: "./res/images/mockup-placeholder.png",
-      description: "<p>Aplikasi web internal untuk manajemen inventaris aset Data Center serta perangkat jaringan, mendukung efisiensi operasional tim NOC.</p>",
-      tags: ["Web App", "Internal Tool"],
+      description: "<p>Aplikasi web internal untuk manajemen inventaris aset Data Center serta perangkat jaringan (Router, Switch, SFP, Kabel Fiber, Server Bare-metal). Membantu tracking serial number, status operasional perangkat, dan alokasi site, sehingga meningkatkan efisiensi dan transparansi operasional tim NOC.</p>",
+      tags: ["Web App", "Internal Tool", "Asset Tracking", "Data Center"],
+      links: []
+    },
+    "noc-monitoring": {
+      title: "NOC Centralized Monitoring Stack",
+      image: "./res/images/mockup-placeholder.png",
+      description: "<p>Infrastruktur monitoring terpusat untuk pemantauan performa jaringan 200+ node ISP backbone secara real-time. Memadukan SNMP polling Zabbix dan LibreNMS dengan database time-series InfluxDB serta dashboard visualisasi Grafana interaktif. Mendukung analisis traffic utilization, monitoring link BGP/upstream, serta deteksi latency spike via Smokeping.</p>",
+      tags: ["Zabbix", "LibreNMS", "Grafana", "InfluxDB", "Smokeping", "PRTG", "The Dude"],
       links: []
     },
     "smoke-notifier": {
-      title: "Smoke Notifier",
+      title: "Smoke Notifier — Intelligent Telegram Alerting",
       image: "./res/images/mockup-placeholder.png",
-      description: "<p>Sistem notifikasi cerdas terintegrasi Telegram untuk memfilter dan mengirimkan alert status jaringan yang relevan, meminimalkan notifikasi spam.</p>",
-      tags: ["Telegram API", "Alerting", "Python"],
+      description: "<p>Sistem notifikasi cerdas berbasis Telegram Bot API yang berfungsi memfilter, mengelompokkan, dan meneruskan alert status jaringan dari monitoring tools (Smokeping, NMS) ke grup teknis yang relevan. Dilengkapi mekanisme deduplikasi notifikasi untuk mengeliminasi alert fatigue (spam).</p>",
+      tags: ["Telegram API", "Alerting", "Python", "NOC Operations"],
       links: [
         { text: "Source Code", url: "https://github.com/BadRush/smoke-notifer", icon: "github" }
       ]
+    },
+    "datacenter": {
+      title: "Desain & Implementasi POP Data Center",
+      image: "./res/images/mockup-placeholder.png",
+      description: "<p>Perancangan dan implementasi infrastruktur fisik Point of Presence (POP) Data Center internal. Mencakup perakitan server rack bare-metal, klaster virtualisasi Proxmox VE dengan penyimpanan redundansi ZFS, konfigurasi VLAN trunking antarrack, manajemen kelistrikan UPS/PDU, serta deployment VPS untuk layanan DNS recursive dan tools operasional internal.</p>",
+      tags: ["Data Center POP", "Proxmox VE", "Virtualization", "ZFS", "High Availability"],
+      links: []
+    },
+    "speedtest": {
+      title: "CDN Speedtest Node & Globalping Probe",
+      image: "./res/images/mockup-placeholder.png",
+      description: "<p>Deployment dan tuning performa server node Speedtest resmi (Ookla & internal) serta integrasi node probe Globalping pada jaringan ISP. Melakukan optimasi throughput jaringan 10G/40G melalui kernel TCP buffer tuning pada Linux, konfigurasi BGP route policy untuk peering lokal/IXP, serta pengukuran performa latensi terdistribusi.</p>",
+      tags: ["Speedtest Node", "Globalping", "Linux Kernel Tuning", "BGP Peering", "Latency Optimization"],
+      links: []
+    },
+    "shelter": {
+      title: "End-to-End Shelter Integration & BTS Tower",
+      image: "./res/images/mockup-placeholder.png",
+      description: "<p>Eksekusi proyek pembangunan fisik shelter BTS/Node jaringan secara terintegrasi: mulai dari perancangan diagram topologi fisik/logikal, penyusunan Rencana Anggaran Biaya (RAB), pemanjatan dan instalasi radio link pada Tower BTS, terminasi Optical Distribution Frame (ODF), hingga manajemen kelistrikan dan grounding system.</p>",
+      tags: ["Topology Design", "RAB Estimation", "BTS Tower", "Hardware Install", "Power & Cabling"],
+      links: []
     }
   };
 
