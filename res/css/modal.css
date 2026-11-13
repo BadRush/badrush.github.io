@@ -27,7 +27,7 @@
 
 .modal-content {
   background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-glass);
   border-radius: 12px;
   margin: auto; /* Centered with flex */
   padding: 30px;
@@ -47,6 +47,10 @@
 
 .close-btn {
   color: var(--text-secondary);
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
   position: absolute;
   top: 15px;
   right: 20px;
@@ -58,9 +62,12 @@
 }
 
 .close-btn:hover,
-.close-btn:focus {
-  color: var(--primary-color);
+.close-btn:focus-visible {
+  color: var(--text-primary);
   text-decoration: none;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 #modal-title {
@@ -117,16 +124,24 @@
   gap: 8px;
   padding: 8px 16px;
   border-radius: 6px;
-  background-color: var(--primary-color);
-  color: #fff;
+  background-color: #27272a;
+  color: var(--text-primary);
+  border: 1px solid #3f3f46;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
   transition: all 0.3s ease;
 }
 
-.modal-link-btn:hover {
-  background-color: var(--primary-hover);
+.modal-link-btn .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.modal-link-btn:hover,
+.modal-link-btn:focus-visible {
+  background-color: #3f3f46;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -143,8 +158,10 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.project-card:hover {
+.project-card:hover,
+.project-card:focus-visible {
   transform: translateY(-5px);
-  border-color: var(--primary-color);
-  box-shadow: 0 10px 20px rgba(0, 204, 255, 0.1);
+  border-color: var(--accent);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+  outline: none;
 }

@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectData = {
     "backuper": {
       title: "Backuper — Multi-Vendor Network Config Backup",
-      image: "./res/images/backuper-mockup.png", 
+      image: "./res/images/backuper-mockup.png",
       description: "<p>Aplikasi otomasi backup konfigurasi perangkat jaringan multi-vendor secara terjadwal dan terpusat. Mendukung perangkat MikroTik, Cisco, Huawei, dan Juniper via protokol SSH aman. Dilengkapi fitur enkripsi file backup, rotasi penyimpanan, dan notifikasi status eksekusi otomatis.</p>",
       tags: ["Python", "Paramiko", "SSH", "Multi-Vendor", "Automation"],
       links: [
@@ -137,44 +137,36 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     "logistik": {
       title: "Logistik App — Asset & Inventory Management",
-      image: "./res/images/mockup-placeholder.png",
       description: "<p>Aplikasi web internal untuk manajemen inventaris aset Data Center serta perangkat jaringan (Router, Switch, SFP, Kabel Fiber, Server Bare-metal). Membantu tracking serial number, status operasional perangkat, dan alokasi site, sehingga meningkatkan efisiensi dan transparansi operasional tim NOC.</p>",
       tags: ["Web App", "Internal Tool", "Asset Tracking", "Data Center"],
       links: []
     },
     "noc-monitoring": {
       title: "NOC Centralized Monitoring Stack",
-      image: "./res/images/mockup-placeholder.png",
       description: "<p>Infrastruktur monitoring terpusat untuk pemantauan performa jaringan 200+ node ISP backbone secara real-time. Memadukan SNMP polling Zabbix dan LibreNMS dengan database time-series InfluxDB serta dashboard visualisasi Grafana interaktif. Mendukung analisis traffic utilization, monitoring link BGP/upstream, serta deteksi latency spike via Smokeping.</p>",
       tags: ["Zabbix", "LibreNMS", "Grafana", "InfluxDB", "Smokeping", "PRTG", "The Dude"],
       links: []
     },
     "smoke-notifier": {
       title: "Smoke Notifier — Intelligent Telegram Alerting",
-      image: "./res/images/mockup-placeholder.png",
       description: "<p>Sistem notifikasi cerdas berbasis Telegram Bot API yang berfungsi memfilter, mengelompokkan, dan meneruskan alert status jaringan dari monitoring tools (Smokeping, NMS) ke grup teknis yang relevan. Dilengkapi mekanisme deduplikasi notifikasi untuk mengeliminasi alert fatigue (spam).</p>",
       tags: ["Telegram API", "Alerting", "Python", "NOC Operations"],
-      links: [
-        { text: "Source Code", url: "https://github.com/BadRush/smoke-notifer", icon: "github" }
-      ]
+      links: []
     },
     "datacenter": {
       title: "Desain & Implementasi POP Data Center",
-      image: "./res/images/mockup-placeholder.png",
       description: "<p>Perancangan dan implementasi infrastruktur fisik Point of Presence (POP) Data Center internal. Mencakup perakitan server rack bare-metal, klaster virtualisasi Proxmox VE dengan penyimpanan redundansi ZFS, konfigurasi VLAN trunking antarrack, manajemen kelistrikan UPS/PDU, serta deployment VPS untuk layanan DNS recursive dan tools operasional internal.</p>",
       tags: ["Data Center POP", "Proxmox VE", "Virtualization", "ZFS", "High Availability"],
       links: []
     },
     "speedtest": {
       title: "CDN Speedtest Node & Globalping Probe",
-      image: "./res/images/mockup-placeholder.png",
       description: "<p>Deployment dan tuning performa server node Speedtest resmi (Ookla & internal) serta integrasi node probe Globalping pada jaringan ISP. Melakukan optimasi throughput jaringan 10G/40G melalui kernel TCP buffer tuning pada Linux, konfigurasi BGP route policy untuk peering lokal/IXP, serta pengukuran performa latensi terdistribusi.</p>",
       tags: ["Speedtest Node", "Globalping", "Linux Kernel Tuning", "BGP Peering", "Latency Optimization"],
       links: []
     },
     "shelter": {
       title: "End-to-End Shelter Integration & BTS Tower",
-      image: "./res/images/mockup-placeholder.png",
       description: "<p>Eksekusi proyek pembangunan fisik shelter BTS/Node jaringan secara terintegrasi: mulai dari perancangan diagram topologi fisik/logikal, penyusunan Rencana Anggaran Biaya (RAB), pemanjatan dan instalasi radio link pada Tower BTS, terminasi Optical Distribution Frame (ODF), hingga manajemen kelistrikan dan grounding system.</p>",
       tags: ["Topology Design", "RAB Estimation", "BTS Tower", "Hardware Install", "Power & Cabling"],
       links: []
@@ -182,58 +174,89 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (modal && closeBtn) {
-    // Fungsi buka modal
+    const modalGallery = modal.querySelector('.modal-gallery');
+    const modalImage = document.getElementById('modal-image');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalTags = document.getElementById('modal-tags');
+    const modalLinks = document.getElementById('modal-links');
+    let lastFocusedElement = null;
+
+    function openProjectModal(projectId, triggerElement) {
+      if (!projectId || !projectData[projectId]) return;
+
+      const data = projectData[projectId];
+      lastFocusedElement = triggerElement || document.activeElement;
+
+      modalTitle.textContent = data.title;
+
+      if (data.image && modalImage && modalGallery) {
+        modalImage.src = data.image;
+        modalImage.alt = data.title;
+        modalGallery.style.display = 'block';
+      } else if (modalImage && modalGallery) {
+        modalImage.removeAttribute('src');
+        modalImage.alt = '';
+        modalGallery.style.display = 'none';
+      }
+
+      modalDescription.innerHTML = data.description;
+      modalTags.innerHTML = data.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('');
+
+      let linksHtml = '';
+      if (data.links && data.links.length > 0) {
+        linksHtml = data.links.map(link => {
+          return `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="modal-link-btn">
+                    <i data-lucide="${link.icon}" class="icon"></i> ${link.text}
+                  </a>`;
+        }).join('');
+      }
+      modalLinks.innerHTML = linksHtml;
+
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function closeProjectModal() {
+      if (!modal.classList.contains('show')) return;
+      modal.classList.remove('show');
+      document.body.style.overflow = 'auto';
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+        lastFocusedElement = null;
+      }
+    }
+
     projectCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const projectId = card.getAttribute('data-project');
-        if (!projectId || !projectData[projectId]) return;
-        
-        const data = projectData[projectId];
-        
-        // Isi konten modal
-        document.getElementById('modal-title').textContent = data.title;
-        document.getElementById('modal-image').src = data.image;
-        document.getElementById('modal-image').style.display = data.image ? 'block' : 'none';
-        
-        document.getElementById('modal-description').innerHTML = data.description;
-        
-        // Render tags
-        const tagsHtml = data.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('');
-        document.getElementById('modal-tags').innerHTML = tagsHtml;
-        
-        // Render links
-        let linksHtml = '';
-        if (data.links && data.links.length > 0) {
-          linksHtml = data.links.map(link => {
-            return `<a href="${link.url}" target="_blank" class="modal-link-btn">
-                      <i data-lucide="${link.icon}" class="icon"></i> ${link.text}
-                    </a>`;
-          }).join('');
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
+        openProjectModal(card.getAttribute('data-project'), card);
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.target === card && (e.key === 'Enter' || e.key === ' ')) {
+          e.preventDefault();
+          openProjectModal(card.getAttribute('data-project'), card);
         }
-        document.getElementById('modal-links').innerHTML = linksHtml;
-        
-        // Re-init lucide icons for newly added HTML
-        if (typeof lucide !== 'undefined') {
-          lucide.createIcons();
-        }
-        
-        // Tampilkan modal
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden'; // cegah scroll background
       });
     });
 
-    // Fungsi tutup modal
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('show');
-      document.body.style.overflow = 'auto'; // kembalikan scroll
-    });
+    closeBtn.addEventListener('click', closeProjectModal);
 
-    // Tutup jika klik area di luar konten modal
     window.addEventListener('click', (e) => {
       if (e.target === modal) {
-        modal.classList.remove('show');
-        document.body.style.overflow = 'auto';
+        closeProjectModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('show')) {
+        closeProjectModal();
       }
     });
   }

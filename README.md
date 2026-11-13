@@ -82,8 +82,7 @@ Setelah deployment aktif di `https://profil.anambadrus.my.id`:
 
 ## 📁 Struktur Berkas Proyek
 - `index.html`: Halaman utama portofolio & ProfilePage schema.
-- `cv.html`: Halaman Curriculum Vitae lengkap.
-- `resume.html`: Halaman One-Page Professional Resume.
+- `cv.html`: Halaman Curriculum Vitae lengkap (Print-to-PDF ready).
 - `sitemap.xml`: XML sitemap dengan ekstensi Google Image.
 - `robots.txt`: Konfigurasi izin crawl mesin pencari & proteksi scanner.
 - `nginx.conf`: Konfigurasi Nginx hardened dengan Real-IP Cloudflare, reverse proxy counter & CSP.
